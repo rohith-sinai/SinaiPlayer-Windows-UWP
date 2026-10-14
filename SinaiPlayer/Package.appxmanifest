@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Package
+  xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
+  xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest"
+  xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
+  xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3"
+  IgnorableNamespaces="uap mp uap3">
+
+  <Identity
+    Name="RohithSinai.SinaiPlayer"
+    Publisher="CN=39DF3821-A6CD-440E-A9DF-8296BD5FCA85"
+    Version="1.0.0.0" />
+
+  <mp:PhoneIdentity PhoneProductId="b398e7d0-1dfe-4685-8da6-473e2d745efa" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+
+  <Properties>
+    <DisplayName>Sinai Player</DisplayName>
+    <PublisherDisplayName>Rohith Sinai</PublisherDisplayName>
+    <Logo>Assets\StoreLogo.png</Logo>
+  </Properties>
+
+  <Dependencies>
+    <TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.0.0" MaxVersionTested="10.0.0.0" />
+  </Dependencies>
+
+  <Resources>
+    <Resource Language="x-generate"/>
+  </Resources>
+
+  <Applications>
+    <Application Id="App"
+      Executable="$targetnametoken$.exe"
+      EntryPoint="SinaiPlayer.App">
+      <uap:VisualElements
+        DisplayName="Sinai Player"
+        Square150x150Logo="Assets\Square150x150Logo.png"
+        Square44x44Logo="Assets\Square44x44Logo.png"
+        Description="Sinai Player is an immersive media experience designed to bring your personal music and video collection to life. Discover your albums, artists, songs, and videos in a beautifully crafted interface with rich artwork, detailed metadata, and high-quality playback across a wide range of media formats."
+        BackgroundColor="transparent">
+        <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png" Square71x71Logo="Assets\SmallTile.png" Square310x310Logo="Assets\LargeTile.png"/>
+        <uap:SplashScreen Image="Assets\SplashScreen.png" />
+      </uap:VisualElements>
+      <Extensions>
+
+        <!-- ================= MUSIC FILES ================= -->
+
+        <uap:Extension Category="windows.fileTypeAssociation" Executable="$targetnametoken$.exe" EntryPoint="SinaiPlayer.App">
+
+          <uap:FileTypeAssociation Name="music" DesiredView="useMore">
+
+            <uap:DisplayName>Music files</uap:DisplayName>
+
+            <uap:SupportedFileTypes>
+
+              <!-- MPEG Audio -->
+              <uap:FileType>.mp3</uap:FileType>
+              <uap:FileType>.mp2</uap:FileType>
+              <uap:FileType>.mpa</uap:FileType>
+
+              <!-- AAC / MPEG-4 Audio -->
+              <uap:FileType>.aac</uap:FileType>
+              <uap:FileType>.m4a</uap:FileType>
+              <uap:FileType>.m4b</uap:FileType>
+              <uap:FileType>.mp4a</uap:FileType>
+
+              <!-- FLAC -->
+              <uap:FileType>.flac</uap:FileType>
+
+              <!-- Ogg / Vorbis / Opus -->
+              <uap:FileType>.ogg</uap:FileType>
+              <uap:FileType>.oga</uap:FileType>
+              <uap:FileType>.opus</uap:FileType>
+
+              <!-- WAV / PCM -->
+              <uap:FileType>.wav</uap:FileType>
+              <uap:FileType>.wave</uap:FileType>
+
+              <!-- AIFF -->
+              <uap:FileType>.aif</uap:FileType>
+              <uap:FileType>.aiff</uap:FileType>
+              <uap:FileType>.aifc</uap:FileType>
+
+              <!-- WMA -->
+              <uap:FileType>.wma</uap:FileType>
+
+              <!-- Musepack -->
+              <uap:FileType>.mpc</uap:FileType>
+
+              <!-- Monkey's Audio -->
+              <uap:FileType>.ape</uap:FileType>
+
+              <!-- True Audio -->
+              <uap:FileType>.tta</uap:FileType>
+
+              <!-- AMR -->
+              <uap:FileType>.amr</uap:FileType>
+
+              <!-- MIDI -->
+              <uap:FileType>.mid</uap:FileType>
+              <uap:FileType>.midi</uap:FileType>
+
+            </uap:SupportedFileTypes>
+
+          </uap:FileTypeAssociation>
+
+        </uap:Extension>
+
+
+        <!-- ================= VIDEO FILES ================= -->
+
+        <uap:Extension Category="windows.fileTypeAssociation" Executable="$targetnametoken$.exe" EntryPoint="SinaiPlayer.App">
+
+          <uap:FileTypeAssociation Name="video" DesiredView="useMore">
+
+            <uap:DisplayName>Video files</uap:DisplayName>
+
+            <uap:SupportedFileTypes>
+              <!-- MPEG / MPEG-TS -->
+              <uap:FileType>.mpg</uap:FileType>
+              <uap:FileType>.mpeg</uap:FileType>
+              <uap:FileType>.mpe</uap:FileType>
+              <uap:FileType>.m1v</uap:FileType>
+              <uap:FileType>.m2v</uap:FileType>
+              <uap:FileType>.ts</uap:FileType>
+              <uap:FileType>.mts</uap:FileType>
+              <uap:FileType>.m2ts</uap:FileType>
+              <!-- MP4 -->
+              <uap:FileType>.mp4</uap:FileType>
+              <uap:FileType>.m4v</uap:FileType>
+              <!-- Matroska -->
+              <uap:FileType>.mkv</uap:FileType>
+              <uap:FileType>.mk3d</uap:FileType>
+              <!-- AVI -->
+              <uap:FileType>.avi</uap:FileType>
+              <!-- WebM -->
+              <uap:FileType>.webm</uap:FileType>
+              <!-- Ogg video -->
+              <uap:FileType>.ogv</uap:FileType>
+              <!-- MPEG-4 / QuickTime -->
+              <uap:FileType>.mov</uap:FileType>
+              <!-- FLV -->
+              <uap:FileType>.flv</uap:FileType>
+              <!-- 3GP -->
+              <uap:FileType>.3gp</uap:FileType>
+              <uap:FileType>.3g2</uap:FileType>
+              <!-- ASF / WMV -->
+              <uap:FileType>.asf</uap:FileType>
+              <uap:FileType>.wmv</uap:FileType>
+              <!-- VOB -->
+              <uap:FileType>.vob</uap:FileType>
+              <!-- MXF -->
+              <uap:FileType>.mxf</uap:FileType>
+              <!-- DivX -->
+              <uap:FileType>.divx</uap:FileType>
+            </uap:SupportedFileTypes>
+
+          </uap:FileTypeAssociation>
+
+        </uap:Extension>
+
+
+        <!-- ================= PLAYLIST FILES ================= -->
+
+        <uap:Extension Category="windows.fileTypeAssociation" Executable="$targetnametoken$.exe" EntryPoint="SinaiPlayer.App">
+
+          <uap:FileTypeAssociation Name="playlist" DesiredView="useMore">
+
+            <uap:DisplayName>Playlist files</uap:DisplayName>
+
+            <uap:SupportedFileTypes>
+
+              <uap:FileType>.m3u</uap:FileType>
+              <uap:FileType>.m3u8</uap:FileType>
+              <uap:FileType>.pls</uap:FileType>
+              <uap:FileType>.xspf</uap:FileType>
+
+            </uap:SupportedFileTypes>
+
+          </uap:FileTypeAssociation>
+
+        </uap:Extension>
+
+      </Extensions>
+    </Application>
+  </Applications>
+
+  <Capabilities>
+    <Capability Name="internetClient" />
+    <uap3:Capability Name="backgroundMediaPlayback"/>
+  </Capabilities>
+</Package>

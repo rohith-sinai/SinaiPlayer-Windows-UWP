@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UserControl
+    x:Class="SinaiPlayer.Lib.Dialogs.NewPlaylistDialogContent"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SinaiPlayer.Lib.Dialogs"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Center" Spacing="20">
+        <Grid Height="150" Width="150" CornerRadius="8" Background="{ThemeResource ControlOnImageFillColorDefaultBrush}"> 
+            <Button Background="Transparent" CornerRadius="8" Height="150" Width="150">
+                <Grid>
+                    <!--Placeholder Icon-->
+                    <FontIcon Glyph="&#xEB9F;" FontSize="45" FontFamily="Segoe Fluent Icons, Segoe MDL2 Assets" Foreground="{ThemeResource ControlFillColorDefaultBrush}"/>
+                    <Image x:Name="PickedImage" />
+                </Grid>
+            </Button>
+        </Grid>
+        
+        <TextBox x:Name="PlaylistName_TextBox" />
+    </StackPanel>
+</UserControl>

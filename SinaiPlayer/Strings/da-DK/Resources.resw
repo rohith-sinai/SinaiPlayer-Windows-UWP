@@ -1,0 +1,540 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Add" xml:space="preserve">
+    <value>Tilføj</value>
+  </data>
+  <data name="AddToPlaylist" xml:space="preserve">
+    <value>Føj til afspilningsliste</value>
+  </data>
+  <data name="Album" xml:space="preserve">
+    <value>Album</value>
+  </data>
+  <data name="AlbumInfoEditor" xml:space="preserve">
+    <value>Albuminformationseditor</value>
+  </data>
+  <data name="Albums" xml:space="preserve">
+    <value>Album</value>
+  </data>
+  <data name="Artist" xml:space="preserve">
+    <value>Kunstner</value>
+  </data>
+  <data name="Artists" xml:space="preserve">
+    <value>Kunstnere</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>Tilbage</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Annuller</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Luk</value>
+  </data>
+  <data name="CreatePlaylist" xml:space="preserve">
+    <value>Opret afspilningsliste</value>
+  </data>
+  <data name="DateAdded" xml:space="preserve">
+    <value>Dato tilføjet</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Slet</value>
+  </data>
+  <data name="Done" xml:space="preserve">
+    <value>Færdig</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Rediger</value>
+  </data>
+  <data name="ItemMissingDialogMessage" xml:space="preserve">
+    <value>Den {0}, du forsøger at åbne, mangler eller er blevet slettet permanent.</value>
+  </data>
+  <data name="Info" xml:space="preserve">
+    <value>Info</value>
+  </data>
+  <data name="Last" xml:space="preserve">
+    <value>Sidste</value>
+  </data>
+  <data name="Music" xml:space="preserve">
+    <value>Musik</value>
+  </data>
+  <data name="NewPlaylist" xml:space="preserve">
+    <value>Ny afspilningsliste</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>Næste</value>
+  </data>
+  <data name="Now" xml:space="preserve">
+    <value>Nu</value>
+  </data>
+  <data name="NowPlaying" xml:space="preserve">
+    <value>Afspilles nu</value>
+  </data>
+  <data name="Pause" xml:space="preserve">
+    <value>Pause</value>
+  </data>
+  <data name="Play" xml:space="preserve">
+    <value>Afspil</value>
+  </data>
+  <data name="Playlists" xml:space="preserve">
+    <value>Afspilningslister</value>
+  </data>
+  <data name="Previous" xml:space="preserve">
+    <value>Forrige</value>
+  </data>
+  <data name="ReleaseYear" xml:space="preserve">
+    <value>Udgivelsesår</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>Fjern</value>
+  </data>
+  <data name="RemoveFromPlaylist" xml:space="preserve">
+    <value>Fjern fra afspilningsliste</value>
+  </data>
+  <data name="Repeat" xml:space="preserve">
+    <value>Gentag</value>
+  </data>
+  <data name="RepeatNone" xml:space="preserve">
+    <value>Gentag ikke</value>
+  </data>
+  <data name="RepeatOff" xml:space="preserve">
+    <value>Gentag fra</value>
+  </data>
+  <data name="RepeatOn" xml:space="preserve">
+    <value>Gentag til</value>
+  </data>
+  <data name="RepeatOne" xml:space="preserve">
+    <value>Gentag én</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Gem</value>
+  </data>
+  <data name="SaveQueue" xml:space="preserve">
+    <value>Gem kø</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Søg</value>
+  </data>
+  <data name="SelectOrder" xml:space="preserve">
+    <value>Vælg rækkefølge</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Indstillinger</value>
+  </data>
+  <data name="ShowAlbum" xml:space="preserve">
+    <value>Vis album</value>
+  </data>
+  <data name="ShowArtist" xml:space="preserve">
+    <value>Vis kunstner</value>
+  </data>
+  <data name="Shuffle" xml:space="preserve">
+    <value>Bland</value>
+  </data>
+  <data name="ShuffleAll" xml:space="preserve">
+    <value>Bland alle</value>
+  </data>
+  <data name="Song" xml:space="preserve">
+    <value>Sang</value>
+  </data>
+  <data name="SongInfo" xml:space="preserve">
+    <value>Sangoplysninger</value>
+  </data>
+  <data name="SongInfoEditor" xml:space="preserve">
+    <value>Sanginformationseditor</value>
+  </data>
+  <data name="Songs" xml:space="preserve">
+    <value>Sange</value>
+  </data>
+  <data name="SortBy" xml:space="preserve">
+    <value>Sortér efter</value>
+  </data>
+  <data name="Speed" xml:space="preserve">
+    <value>Hastighed</value>
+  </data>
+  <data name="Stop" xml:space="preserve">
+    <value>Stop</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>Titel</value>
+  </data>
+  <data name="VideoInfo" xml:space="preserve">
+    <value>Videooplysninger</value>
+  </data>
+  <data name="Videos" xml:space="preserve">
+    <value>Videoer</value>
+  </data>
+  <data name="ItemMissingDialogTitle" xml:space="preserve">
+    <value>Kan ikke finde dette</value>
+  </data>
+  <data name="DeleteDialogTitle" xml:space="preserve">
+    <value>Slet {0}</value>
+  </data>
+  <data name="FeedbackPromptDialogTitle" xml:space="preserve">
+    <value>Kan du lide Sinai Player?</value>
+  </data>
+  <data name="FeedbackPromptDialogMessage" xml:space="preserve">
+    <value>Sinai Player drives udelukkende af donationer fra vores fans. Hvis du kan lide at bruge denne app, må du meget gerne støtte os med et lille bidrag. Det hjælper os med at dække vores serveromkostninger, udvikle nye funktioner løbende og give dig en reklamefri appoplevelse.</value>
+  </data>
+  <data name="Donate" xml:space="preserve">
+    <value>Donér</value>
+  </data>
+  <data name="RateUs" xml:space="preserve">
+    <value>Bedøm os</value>
+  </data>
+  <data name="Later" xml:space="preserve">
+    <value>Senere</value>
+  </data>
+  <data name="DeveloperProfileDialogTitle" xml:space="preserve">
+    <value>Udviklerprofil</value>
+  </data>
+  <data name="Position" xml:space="preserve">
+    <value>Position</value>
+  </data>
+  <data name="Index" xml:space="preserve">
+    <value>Indeks</value>
+  </data>
+  <data name="SongArtist" xml:space="preserve">
+    <value>Sangkunstner</value>
+  </data>
+  <data name="AlbumArtist" xml:space="preserve">
+    <value>Albumkunstner</value>
+  </data>
+  <data name="Genre" xml:space="preserve">
+    <value>Genre</value>
+  </data>
+  <data name="Composer" xml:space="preserve">
+    <value>Komponist</value>
+  </data>
+  <data name="Genres" xml:space="preserve">
+    <value>Genrer</value>
+  </data>
+  <data name="Composers" xml:space="preserve">
+    <value>Komponister</value>
+  </data>
+  <data name="Unknown" xml:space="preserve">
+    <value>Ukendt</value>
+  </data>
+  <data name="DontShowThisAgain" xml:space="preserve">
+    <value>Vis ikke dette igen</value>
+  </data>
+  <data name="SongNumber" xml:space="preserve">
+    <value>Sangnummer</value>
+  </data>
+  <data name="Format" xml:space="preserve">
+    <value>Format</value>
+  </data>
+  <data name="FileSize" xml:space="preserve">
+    <value>Filstørrelse</value>
+  </data>
+  <data name="BitRate" xml:space="preserve">
+    <value>Bithastighed</value>
+  </data>
+  <data name="FileLocation" xml:space="preserve">
+    <value>Filplacering</value>
+  </data>
+  <data name="File" xml:space="preserve">
+    <value>Fil</value>
+  </data>
+  <data name="Folder" xml:space="preserve">
+    <value>Mappe</value>
+  </data>
+  <data name="Folders" xml:space="preserve">
+    <value>Mapper</value>
+  </data>
+  <data name="ShowInFolder" xml:space="preserve">
+    <value>Vis i mappe</value>
+  </data>
+  <data name="Duration" xml:space="preserve">
+    <value>Varighed</value>
+  </data>
+  <data name="UnknownArtist" xml:space="preserve">
+    <value>Ukendt kunstner</value>
+  </data>
+  <data name="UnknownAlbum" xml:space="preserve">
+    <value>Ukendt album</value>
+  </data>
+  <data name="AppName" xml:space="preserve">
+    <value>Sinai Player</value>
+  </data>
+  <data name="DeveloperName" xml:space="preserve">
+    <value>Rohith Sinai</value>
+  </data>
+  <data name="Version" xml:space="preserve">
+    <value>Version</value>
+  </data>
+  <data name="DeveloperProfile" xml:space="preserve">
+    <value>Udviklerprofil</value>
+  </data>
+  <data name="OpenSourceLicenses" xml:space="preserve">
+    <value>Open source-licenser</value>
+  </data>
+  <data name="PrivacyPolicy" xml:space="preserve">
+    <value>Privatlivspolitik</value>
+  </data>
+  <data name="SendFeedback" xml:space="preserve">
+    <value>Send feedback</value>
+  </data>
+  <data name="SettingsExpanderAboutDescription" xml:space="preserve">
+    <value>© 2026. Alle rettigheder forbeholdes.</value>
+  </data>
+  <data name="About" xml:space="preserve">
+    <value>Om</value>
+  </data>
+  <data name="General" xml:space="preserve">
+    <value>Generelt</value>
+  </data>
+  <data name="Metadata" xml:space="preserve">
+    <value>Metadata</value>
+  </data>
+  <data name="Light" xml:space="preserve">
+    <value>Lys</value>
+  </data>
+  <data name="Dark" xml:space="preserve">
+    <value>Mørk</value>
+  </data>
+  <data name="System" xml:space="preserve">
+    <value>System</value>
+  </data>
+  <data name="SettingsCardArtistSlideshowHeader" xml:space="preserve">
+    <value>Vis animerede kunstnerbilleder, mens sangen afspilles</value>
+  </data>
+  <data name="SettingsCardFetchMetadataHeader" xml:space="preserve">
+    <value>Indlæs musikillustrationer og andre oplysninger fra internettet</value>
+  </data>
+  <data name="SettingsCardThemeModeHeader" xml:space="preserve">
+    <value>Tema</value>
+  </data>
+  <data name="SettingsExpandedMediaFoldersHeader" xml:space="preserve">
+    <value>MedieMapper</value>
+  </data>
+  <data name="SettingsExpandedMediaFoldersDescription" xml:space="preserve">
+    <value>Vælg, hvor der skal søges efter musik- og videofiler</value>
+  </data>
+  <data name="AddFolder" xml:space="preserve">
+    <value>Tilføj mappe</value>
+  </data>
+  <data name="DeletedFile" xml:space="preserve">
+    <value>Slettet fil</value>
+  </data>
+  <data name="UnTitled" xml:space="preserve">
+    <value>Uden titel {0}</value>
+  </data>
+  <data name="Item" xml:space="preserve">
+    <value>Element</value>
+  </data>
+  <data name="EmptyPlaylistSubTitle" xml:space="preserve">
+    <value>Ingen sange eller videoer</value>
+  </data>
+  <data name="DeleteDialogMessageSingular" xml:space="preserve">
+    <value>Denne {0} '{1}' bliver slettet permanent fra din enhed</value>
+  </data>
+  <data name="DeleteDialogMessagePlural" xml:space="preserve">
+    <value>{0} bliver slettet permanent fra din enhed</value>
+  </data>
+  <data name="DeleteDialogMessageDefault" xml:space="preserve">
+    <value>Disse filer bliver slettet permanent fra din enhed</value>
+  </data>
+  <data name="SearchResultsHeader" xml:space="preserve">
+    <value>Resultater for "{0}"</value>
+  </data>
+  <data name="DeletePlaylistDialogTitle" xml:space="preserve">
+    <value>Slet afspilningsliste</value>
+  </data>
+  <data name="DeletePlaylistDialogMessage" xml:space="preserve">
+    <value>Denne afspilningsliste '{0}' bliver slettet</value>
+  </data>
+  <data name="PlaylistInfoEditor" xml:space="preserve">
+    <value>Afspilningslisteinformationseditor</value>
+  </data>
+  <data name="Modify" xml:space="preserve">
+    <value>Rediger</value>
+  </data>
+  <data name="Video" xml:space="preserve">
+    <value>Video</value>
+  </data>
+  <data name="RemoveItemFromPlaylistDialogMessage" xml:space="preserve">
+    <value>Fjerner '{0}' fra denne afspilningsliste</value>
+  </data>
+  <data name="RemoveItemFromPlaylistDialogTitle" xml:space="preserve">
+    <value>Fjern fra {0}</value>
+  </data>
+  <data name="RemoveFolderDialogTitle" xml:space="preserve">
+    <value>Fjern mappe</value>
+  </data>
+  <data name="RemoveFolderDialogMessage" xml:space="preserve">
+    <value>Fjern "{0}" fra scanning af mediefiler</value>
+  </data>
+  <data name="IntroPageFeatureOneTitle" xml:space="preserve">
+    <value>Offline-samling</value>
+  </data>
+  <data name="IntroPageFeatureOneSubTitle" xml:space="preserve">
+    <value>Vælg de mapper, der indeholder dine medier, og opbyg dit personlige bibliotek</value>
+  </data>
+  <data name="IntroPageFeatureTwoTitle" xml:space="preserve">
+    <value>Fordybende oplevelse</value>
+  </data>
+  <data name="IntroPageFeatureTwoSubTitle" xml:space="preserve">
+    <value>Giver metadata om dine digitalt købte, rippede cd'er eller downloadede medier</value>
+  </data>
+  <data name="IntroPageFeatureThreeTitle" xml:space="preserve">
+    <value>Tabsfri kvalitet</value>
+  </data>
+  <data name="IntroPageFeatureThreeSubTitle" xml:space="preserve">
+    <value>Understøtter en lang række lyd- og videoformater og afspiller dem problemfrit</value>
+  </data>
+  <data name="IntroPageHeading" xml:space="preserve">
+    <value>Velkommen til Sinai Player</value>
+  </data>
+  <data name="Continue" xml:space="preserve">
+    <value>Fortsæt</value>
+  </data>
+  <data name="QueueList" xml:space="preserve">
+    <value>Køliste</value>
+  </data>
+  <data name="EmptyViewTitle" xml:space="preserve">
+    <value>Intet fundet</value>
+  </data>
+  <data name="EmptyViewSubTitle" xml:space="preserve">
+    <value>Det ser ud til, at der ikke blev fundet nogen {0} i de valgte mapper. Vælg en anden</value>
+  </data>
+  <data name="ImportFolders" xml:space="preserve">
+    <value>Importér mapper</value>
+  </data>
+  <data name="AddingItems" xml:space="preserve">
+    <value>Tilføjer elementer ({0}/{1})</value>
+  </data>
+  <data name="RemovingItems" xml:space="preserve">
+    <value>Fjerner elementer ({0}/{1})</value>
+  </data>
+  <data name="CheckingForNewItems" xml:space="preserve">
+    <value>Søger efter nye elementer</value>
+  </data>
+  <data name="AddedItems" xml:space="preserve">
+    <value>Vi har tilføjet {0} elementer</value>
+  </data>
+  <data name="EmptyPlaylistViewTitle" xml:space="preserve">
+    <value>Ingen afspilningslister</value>
+  </data>
+  <data name="EmptyPlaylistViewSubTitle" xml:space="preserve">
+    <value>Afspilningslister, du har oprettet, vises her</value>
+  </data>
+  <data name="RemovedItems" xml:space="preserve">
+    <value>Vi har fjernet {0} elementer</value>
+  </data>
+</root>

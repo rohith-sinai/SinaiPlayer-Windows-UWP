@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="SinaiPlayer.Lib.UI.Pages.SettingsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SinaiPlayer.Lib.UI.Pages"
+    xmlns:ui="using:CommunityToolkit.WinUI"
+    xmlns:controls="using:CommunityToolkit.WinUI.Controls"
+    xmlns:models="using:SinaiPlayer.Lib.Models"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"  
+    mc:Ignorable="d">
+    <Page.Resources>
+        <!--  These styles can be referenced to create a consistent SettingsPage layout  -->
+
+        <!--  Spacing between cards  -->
+        <x:Double x:Key="SettingsCardSpacing">4</x:Double>
+
+        <!--  Style (inc. the correct spacing) of a section header  -->
+        <Style x:Key="SettingsSectionHeaderTextBlockStyle" BasedOn="{StaticResource BodyTextBlockStyle}" TargetType="TextBlock">
+            <Style.Setters>
+                <Setter Property="Margin" Value="1,30,0,6" />
+                <Setter Property="FontWeight" Value="Medium" />
+            </Style.Setters>
+        </Style>
+    </Page.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" x:Name="LargeTitle" FontSize="40" Style="{ThemeResource TitleTextBlockStyle}" Margin="30,50,0,20"/>
+
+        <ScrollViewer Grid.Row="1">
+
+            <StackPanel Margin="30,0,30,0" Spacing="{StaticResource SettingsCardSpacing}" HorizontalAlignment="Stretch">
+                <StackPanel.ChildrenTransitions>
+                    <EntranceThemeTransition FromVerticalOffset="50" />
+                    <RepositionThemeTransition IsStaggeringEnabled="False" />
+                </StackPanel.ChildrenTransitions>
+
+                <TextBlock Style="{StaticResource SettingsSectionHeaderTextBlockStyle}" x:Name="GeneralTextBlock" Margin="1,0,0,6" />
+
+                <!--Folders-->
+                <controls:SettingsExpander x:Name="SettingsExpanded_MediaFolders" HeaderIcon="{ui:FontIcon Glyph=&#xE8B7;}">
+                    <Button x:Name="AddFolderButton" Click="AddFolder_Click" />
+                    <controls:SettingsExpander.ItemTemplate>
+                        <DataTemplate x:DataType="models:MediaFolder">
+                            <controls:SettingsCard Header="{x:Bind Title}" Description="{x:Bind Path}">
+                                <Button Background="Transparent" BorderBrush="Transparent" BorderThickness="0" Tag="{x:Bind}" Click="RemoveFolder_Click">
+                                    <FontIcon Glyph="&#xECC9;" FontFamily="Segoe Fluent Icons, Segoe MDL2 Assets" FontSize="16"/>
+                                </Button>
+                            </controls:SettingsCard>
+                        </DataTemplate>
+                    </controls:SettingsExpander.ItemTemplate>
+                </controls:SettingsExpander>
+
+                <!--Theme-->
+                <controls:SettingsCard x:Name="SettingsCard_ThemeMode" HeaderIcon="{ui:FontIcon Glyph=&#xE793;}">
+                    <ComboBox x:Name="ThemeModeComboBox" SelectionChanged="ThemeMode_SelectionChanged">
+                        <ComboBoxItem x:Name="ThemeModeComboBoxItem_System"/>
+                        <ComboBoxItem x:Name="ThemeModeComboBoxItem_Light"/>
+                        <ComboBoxItem x:Name="ThemeModeComboBoxItem_Dark"/>
+                    </ComboBox>
+                </controls:SettingsCard>
+
+                <TextBlock Style="{StaticResource SettingsSectionHeaderTextBlockStyle}" x:Name="MetadataTextBlock" />
+
+                <controls:SettingsCard x:Name="SettingsCard_FetchMetadata"  HeaderIcon="{ui:FontIcon Glyph=&#xE90B;}">
+                    <ToggleSwitch x:Name="FetchMetadataToggleButton" Toggled="Toggle_FetchMetadata" />
+                </controls:SettingsCard>
+
+                <TextBlock Style="{StaticResource SettingsSectionHeaderTextBlockStyle}" x:Name="NowPlayingTextBlock" />
+
+                <!--Enable Artist slideshow-->
+                <controls:SettingsCard x:Name="SettingsCard_ArtistSlideshow"  HeaderIcon="{ui:FontIcon Glyph=&#xE8B9;}">
+                    <ToggleSwitch x:Name="NowPlayingSlideshowToggleButton" Toggled="Toggle_NowPlayingAnimatedArtistImages" />
+                </controls:SettingsCard>
+
+                <!--About section-->
+                <TextBlock x:Name="AboutTextBlock" Style="{StaticResource SettingsSectionHeaderTextBlockStyle}"/>
+
+                <controls:SettingsExpander x:Name="SettingsExpander_About" HeaderIcon="{ui:BitmapIcon Source=ms-appx:///Assets/Square44x44Logo.altform-unplated_targetsize-48.png}">
+                    <TextBlock x:Name="VersionTextBlock"  Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
+                    <controls:SettingsExpander.Items>
+                        <controls:SettingsCard HorizontalContentAlignment="Left" ContentAlignment="Left">
+                            <StackPanel Margin="-12,0,0,0" Orientation="Vertical">
+                                <HyperlinkButton x:Name="OpenSourceLicensesHyperlinkButton" Click="OpenSourceLicensesButton_Click"/>
+                                <HyperlinkButton x:Name="PrivacyPolicyHyperlinkButton" Click="PrivacyPolicyButton_Click" />
+                                <HyperlinkButton x:Name="DeveloperProfileHyperlinkButton" Click="DeveloperProfileButton_Click" />
+                            </StackPanel>
+                        </controls:SettingsCard>
+                    </controls:SettingsExpander.Items>
+                </controls:SettingsExpander>
+
+                <HyperlinkButton Margin="0,8,0,0" x:Name="DonateHyperlinkButton" Click="DonateButton_Click" />
+                <HyperlinkButton x:Name="SendFeedbackHyperlinkButton" Click="SendFeedbackButton_Click" />
+
+                <Grid Height="85" />
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>

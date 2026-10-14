@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UserControl
+    x:Class="SinaiPlayer.Lib.UI.Pages.Player.ArtistSlideshowContainer"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SinaiPlayer.Lib.UI.Pages.Player"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid x:Name="RootGrid" Background="Black">
+
+        <!--NEXT IMAGE-->
+        <Image x:Name="NextImage" Stretch="UniformToFill" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Opacity="0" RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <ScaleTransform x:Name="NextScaleTransform" ScaleX="1.0" ScaleY="1.0" />
+            </Image.RenderTransform>
+        </Image>
+
+        <!--CURRENT IMAGE-->
+        <Image x:Name="CurrentImage" Stretch="UniformToFill" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Opacity="1" RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <ScaleTransform x:Name="CurrentScaleTransform" ScaleX="1.0" ScaleY="1.0" />
+            </Image.RenderTransform>
+        </Image>
+
+        <Rectangle x:Name="OverlayRectangle" Opacity="0" IsHitTestVisible="False" />
+
+        <Rectangle x:Name="ExpandedAcrylicRectangle" IsHitTestVisible="False" Opacity="0">
+            <Rectangle.Fill>
+                <AcrylicBrush TintColor="Black" TintOpacity="0.1" FallbackColor="Black" />
+            </Rectangle.Fill>
+        </Rectangle>
+    </Grid>
+    
+</UserControl>

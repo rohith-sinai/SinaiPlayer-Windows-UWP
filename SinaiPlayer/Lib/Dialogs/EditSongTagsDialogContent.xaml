@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UserControl
+    x:Class="SinaiPlayer.Lib.Dialogs.EditSongTagsDialogContent"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SinaiPlayer.Lib.Dialogs"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <ScrollViewer HorizontalScrollMode="Disabled" VerticalScrollBarVisibility="Hidden" VerticalScrollMode="Enabled" HorizontalScrollBarVisibility="Disabled">
+
+        <StackPanel Margin="0,12,0,0">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="70" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Column="0">
+                    <TextBlock x:Name="SongNumberTextBlock" Style="{ThemeResource CaptionTextBlockStyle}" Margin="0,0,0,6"/>
+                    <TextBox x:Name="TrackNumber" PlaceholderText="0."/>
+                </StackPanel>
+                
+                <StackPanel Grid.Column="1" Margin="12,0,0,0">
+                    <TextBlock x:Name="TitleTextBlock" Style="{ThemeResource CaptionTextBlockStyle}" Margin="0,0,0,6"/>
+                    <TextBox x:Name="Title" PlaceholderText="Song Title" />
+                </StackPanel>
+            </Grid>
+
+            <StackPanel Margin="0,12,0,0">
+                <TextBlock x:Name="SongArtistTextBlock" Style="{ThemeResource CaptionTextBlockStyle}" Margin="0,0,0,6"/>
+                <TextBox x:Name="Artist" PlaceholderText="Song artist" />
+            </StackPanel>
+
+            <StackPanel Margin="0,12,0,0">
+                <TextBlock x:Name="AlbumTextBlock" Style="{ThemeResource CaptionTextBlockStyle}" Margin="0,0,0,6"/>
+                <TextBox x:Name="Album" PlaceholderText="Album" />
+            </StackPanel>
+
+            <StackPanel Margin="0,12,0,0">
+                <TextBlock x:Name="AlbumArtistTextBlock" Style="{ThemeResource CaptionTextBlockStyle}" Margin="0,0,0,6"/>
+                <TextBox x:Name="AlbumArtist" PlaceholderText="Album artist" />
+            </StackPanel>
+
+            <Grid Margin="0,12,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Column="0" Margin="0,0,6,0">
+                    <TextBlock x:Name="ReleaseYearTextBlock" Style="{ThemeResource CaptionTextBlockStyle}" Margin="0,0,0,6"/>
+                    <TextBox x:Name="Year" PlaceholderText="Release year" />
+                </StackPanel>
+
+                <StackPanel Grid.Column="1" Margin="6,0,0,0">
+                    <TextBlock x:Name="GenreTextBlock" Style="{ThemeResource CaptionTextBlockStyle}" Margin="0,0,0,6"/>
+                    <TextBox x:Name="Genre" PlaceholderText="Genre" />
+                </StackPanel>
+            </Grid>
+        </StackPanel>
+    </ScrollViewer>
+    
+</UserControl>

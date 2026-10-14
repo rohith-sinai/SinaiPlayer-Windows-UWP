@@ -1,0 +1,540 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Add" xml:space="preserve">
+    <value>Afegeix</value>
+  </data>
+  <data name="AddToPlaylist" xml:space="preserve">
+    <value>Afegeix a la llista de reproducció</value>
+  </data>
+  <data name="Album" xml:space="preserve">
+    <value>Àlbum</value>
+  </data>
+  <data name="AlbumInfoEditor" xml:space="preserve">
+    <value>Edita la informació de l'àlbum</value>
+  </data>
+  <data name="Albums" xml:space="preserve">
+    <value>Àlbums</value>
+  </data>
+  <data name="Artist" xml:space="preserve">
+    <value>Artista</value>
+  </data>
+  <data name="Artists" xml:space="preserve">
+    <value>Artistes</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>Enrere</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel·la</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Tanca</value>
+  </data>
+  <data name="CreatePlaylist" xml:space="preserve">
+    <value>Crea una llista de reproducció</value>
+  </data>
+  <data name="DateAdded" xml:space="preserve">
+    <value>Data d'afegiment</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Suprimeix</value>
+  </data>
+  <data name="Done" xml:space="preserve">
+    <value>Fet</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Edita</value>
+  </data>
+  <data name="ItemMissingDialogMessage" xml:space="preserve">
+    <value>The {0} you are trying to open is missing or deleted permanently.</value>
+  </data>
+  <data name="Info" xml:space="preserve">
+    <value>Informació</value>
+  </data>
+  <data name="Last" xml:space="preserve">
+    <value>Últim</value>
+  </data>
+  <data name="Music" xml:space="preserve">
+    <value>Música</value>
+  </data>
+  <data name="NewPlaylist" xml:space="preserve">
+    <value>Nova llista de reproducció</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>Següent</value>
+  </data>
+  <data name="Now" xml:space="preserve">
+    <value>Ara</value>
+  </data>
+  <data name="NowPlaying" xml:space="preserve">
+    <value>S'està reproduint</value>
+  </data>
+  <data name="Pause" xml:space="preserve">
+    <value>Pausa</value>
+  </data>
+  <data name="Play" xml:space="preserve">
+    <value>Reprodueix</value>
+  </data>
+  <data name="Playlists" xml:space="preserve">
+    <value>Llistes de reproducció</value>
+  </data>
+  <data name="Previous" xml:space="preserve">
+    <value>Anterior</value>
+  </data>
+  <data name="ReleaseYear" xml:space="preserve">
+    <value>Any de llançament</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>Elimina</value>
+  </data>
+  <data name="RemoveFromPlaylist" xml:space="preserve">
+    <value>Elimina de la llista de reproducció</value>
+  </data>
+  <data name="Repeat" xml:space="preserve">
+    <value>Repeteix</value>
+  </data>
+  <data name="RepeatNone" xml:space="preserve">
+    <value>No repeteixis</value>
+  </data>
+  <data name="RepeatOff" xml:space="preserve">
+    <value>Repetició desactivada</value>
+  </data>
+  <data name="RepeatOn" xml:space="preserve">
+    <value>Repetició activada</value>
+  </data>
+  <data name="RepeatOne" xml:space="preserve">
+    <value>Repeteix-ne una</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Desa</value>
+  </data>
+  <data name="SaveQueue" xml:space="preserve">
+    <value>Desa la cua</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Cerca</value>
+  </data>
+  <data name="SelectOrder" xml:space="preserve">
+    <value>Selecciona l'ordre</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Configuració</value>
+  </data>
+  <data name="ShowAlbum" xml:space="preserve">
+    <value>Mostra l'àlbum</value>
+  </data>
+  <data name="ShowArtist" xml:space="preserve">
+    <value>Mostra l'artista</value>
+  </data>
+  <data name="Shuffle" xml:space="preserve">
+    <value>Aleatori</value>
+  </data>
+  <data name="ShuffleAll" xml:space="preserve">
+    <value>Reprodueix-ho tot aleatòriament</value>
+  </data>
+  <data name="Song" xml:space="preserve">
+    <value>Cançó</value>
+  </data>
+  <data name="SongInfo" xml:space="preserve">
+    <value>Informació de la cançó</value>
+  </data>
+  <data name="SongInfoEditor" xml:space="preserve">
+    <value>Edita la informació de la cançó</value>
+  </data>
+  <data name="Songs" xml:space="preserve">
+    <value>Cançons</value>
+  </data>
+  <data name="SortBy" xml:space="preserve">
+    <value>Ordena per</value>
+  </data>
+  <data name="Speed" xml:space="preserve">
+    <value>Velocitat</value>
+  </data>
+  <data name="Stop" xml:space="preserve">
+    <value>Atura</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>Títol</value>
+  </data>
+  <data name="VideoInfo" xml:space="preserve">
+    <value>Informació del vídeo</value>
+  </data>
+  <data name="Videos" xml:space="preserve">
+    <value>Vídeos</value>
+  </data>
+  <data name="ItemMissingDialogTitle" xml:space="preserve">
+    <value>No s'ha trobat</value>
+  </data>
+  <data name="DeleteDialogTitle" xml:space="preserve">
+    <value>Suprimeix {0}</value>
+  </data>
+  <data name="FeedbackPromptDialogTitle" xml:space="preserve">
+    <value>Enjoying Sinai Player?</value>
+  </data>
+  <data name="FeedbackPromptDialogMessage" xml:space="preserve">
+    <value>Sinai Player runs entirely on donations we receive from our fans. If you love using this app, please support us with a small tip. It helps us maintain our server costs, build constant new features and provide you an ad-free app experience</value>
+  </data>
+  <data name="Donate" xml:space="preserve">
+    <value>Fes una donació</value>
+  </data>
+  <data name="RateUs" xml:space="preserve">
+    <value>Valora'ns</value>
+  </data>
+  <data name="Later" xml:space="preserve">
+    <value>Més tard</value>
+  </data>
+  <data name="DeveloperProfileDialogTitle" xml:space="preserve">
+    <value>Perfil del desenvolupador</value>
+  </data>
+  <data name="Position" xml:space="preserve">
+    <value>Posició</value>
+  </data>
+  <data name="Index" xml:space="preserve">
+    <value>Índex</value>
+  </data>
+  <data name="SongArtist" xml:space="preserve">
+    <value>Artista de la cançó</value>
+  </data>
+  <data name="AlbumArtist" xml:space="preserve">
+    <value>Artista de l'àlbum</value>
+  </data>
+  <data name="Genre" xml:space="preserve">
+    <value>Gènere</value>
+  </data>
+  <data name="Composer" xml:space="preserve">
+    <value>Compositor</value>
+  </data>
+  <data name="Genres" xml:space="preserve">
+    <value>Gèneres</value>
+  </data>
+  <data name="Composers" xml:space="preserve">
+    <value>Compositors</value>
+  </data>
+  <data name="Unknown" xml:space="preserve">
+    <value>Desconegut</value>
+  </data>
+  <data name="DontShowThisAgain" xml:space="preserve">
+    <value>No ho tornis a mostrar</value>
+  </data>
+  <data name="SongNumber" xml:space="preserve">
+    <value>Número de cançó</value>
+  </data>
+  <data name="Format" xml:space="preserve">
+    <value>Format</value>
+  </data>
+  <data name="FileSize" xml:space="preserve">
+    <value>Mida del fitxer</value>
+  </data>
+  <data name="BitRate" xml:space="preserve">
+    <value>Taxa de bits</value>
+  </data>
+  <data name="FileLocation" xml:space="preserve">
+    <value>Ubicació del fitxer</value>
+  </data>
+  <data name="File" xml:space="preserve">
+    <value>Fitxer</value>
+  </data>
+  <data name="Folder" xml:space="preserve">
+    <value>Carpeta</value>
+  </data>
+  <data name="Folders" xml:space="preserve">
+    <value>Carpetes</value>
+  </data>
+  <data name="ShowInFolder" xml:space="preserve">
+    <value>Mostra a la carpeta</value>
+  </data>
+  <data name="Duration" xml:space="preserve">
+    <value>Durada</value>
+  </data>
+  <data name="UnknownArtist" xml:space="preserve">
+    <value>Artista desconegut</value>
+  </data>
+  <data name="UnknownAlbum" xml:space="preserve">
+    <value>Àlbum desconegut</value>
+  </data>
+  <data name="AppName" xml:space="preserve">
+    <value>Sinai Player</value>
+  </data>
+  <data name="DeveloperName" xml:space="preserve">
+    <value>Rohith Sinai</value>
+  </data>
+  <data name="Version" xml:space="preserve">
+    <value>Versió</value>
+  </data>
+  <data name="DeveloperProfile" xml:space="preserve">
+    <value>Perfil del desenvolupador</value>
+  </data>
+  <data name="OpenSourceLicenses" xml:space="preserve">
+    <value>Llicències de codi obert</value>
+  </data>
+  <data name="PrivacyPolicy" xml:space="preserve">
+    <value>Política de privadesa</value>
+  </data>
+  <data name="SendFeedback" xml:space="preserve">
+    <value>Envia comentaris</value>
+  </data>
+  <data name="SettingsExpanderAboutDescription" xml:space="preserve">
+    <value>© 2026. Tots els drets reservats.</value>
+  </data>
+  <data name="About" xml:space="preserve">
+    <value>Quant a</value>
+  </data>
+  <data name="General" xml:space="preserve">
+    <value>General</value>
+  </data>
+  <data name="Metadata" xml:space="preserve">
+    <value>Metadades</value>
+  </data>
+  <data name="Light" xml:space="preserve">
+    <value>Clar</value>
+  </data>
+  <data name="Dark" xml:space="preserve">
+    <value>Fosc</value>
+  </data>
+  <data name="System" xml:space="preserve">
+    <value>Sistema</value>
+  </data>
+  <data name="SettingsCardArtistSlideshowHeader" xml:space="preserve">
+    <value>Mostra una presentació d'imatges de l'artista durant la reproducció</value>
+  </data>
+  <data name="SettingsCardFetchMetadataHeader" xml:space="preserve">
+    <value>Obtén portades d'àlbums i altra informació en línia</value>
+  </data>
+  <data name="SettingsCardThemeModeHeader" xml:space="preserve">
+    <value>Tema</value>
+  </data>
+  <data name="SettingsExpandedMediaFoldersHeader" xml:space="preserve">
+    <value>Carpetes multimèdia</value>
+  </data>
+  <data name="SettingsExpandedMediaFoldersDescription" xml:space="preserve">
+    <value>Tria on cercar fitxers de música i vídeo</value>
+  </data>
+  <data name="AddFolder" xml:space="preserve">
+    <value>Afegeix una carpeta</value>
+  </data>
+  <data name="DeletedFile" xml:space="preserve">
+    <value>Fitxer suprimit</value>
+  </data>
+  <data name="UnTitled" xml:space="preserve">
+    <value>Sense títol {0}</value>
+  </data>
+  <data name="Item" xml:space="preserve">
+    <value>Element</value>
+  </data>
+  <data name="EmptyPlaylistSubTitle" xml:space="preserve">
+    <value>No hi ha cançons ni vídeos</value>
+  </data>
+  <data name="DeleteDialogMessageSingular" xml:space="preserve">
+    <value>{0} "{1}" se suprimirà permanentment del dispositiu.</value>
+  </data>
+  <data name="DeleteDialogMessagePlural" xml:space="preserve">
+    <value>{0} elements se suprimiran permanentment del dispositiu.</value>
+  </data>
+  <data name="DeleteDialogMessageDefault" xml:space="preserve">
+    <value>Aquests fitxers se suprimiran permanentment del dispositiu.</value>
+  </data>
+  <data name="SearchResultsHeader" xml:space="preserve">
+    <value>Resultats de la cerca de "{0}"</value>
+  </data>
+  <data name="DeletePlaylistDialogTitle" xml:space="preserve">
+    <value>Suprimeix la llista de reproducció</value>
+  </data>
+  <data name="DeletePlaylistDialogMessage" xml:space="preserve">
+    <value>La llista de reproducció "{0}" se suprimirà.</value>
+  </data>
+  <data name="PlaylistInfoEditor" xml:space="preserve">
+    <value>Edita la informació de la llista de reproducció</value>
+  </data>
+  <data name="Modify" xml:space="preserve">
+    <value>Modifica</value>
+  </data>
+  <data name="Video" xml:space="preserve">
+    <value>Vídeo</value>
+  </data>
+  <data name="RemoveItemFromPlaylistDialogMessage" xml:space="preserve">
+    <value>Elimina "{0}" d'aquesta llista de reproducció</value>
+  </data>
+  <data name="RemoveItemFromPlaylistDialogTitle" xml:space="preserve">
+    <value>Elimina de {0}</value>
+  </data>
+  <data name="RemoveFolderDialogTitle" xml:space="preserve">
+    <value>Elimina la carpeta</value>
+  </data>
+  <data name="RemoveFolderDialogMessage" xml:space="preserve">
+    <value>Elimina "{0}" de la cerca de fitxers multimèdia</value>
+  </data>
+  <data name="IntroPageFeatureOneTitle" xml:space="preserve">
+    <value>Col·lecció fora de línia</value>
+  </data>
+  <data name="IntroPageFeatureOneSubTitle" xml:space="preserve">
+    <value>Selecciona carpetes amb fitxers multimèdia i crea la teva biblioteca personal</value>
+  </data>
+  <data name="IntroPageFeatureTwoTitle" xml:space="preserve">
+    <value>Experiència immersiva</value>
+  </data>
+  <data name="IntroPageFeatureTwoSubTitle" xml:space="preserve">
+    <value>Proporciona metadades per al contingut comprat digitalment, extret de CD o descarregat</value>
+  </data>
+  <data name="IntroPageFeatureThreeTitle" xml:space="preserve">
+    <value>Qualitat sense pèrdua</value>
+  </data>
+  <data name="IntroPageFeatureThreeSubTitle" xml:space="preserve">
+    <value>Admet una gran varietat de formats d'àudio i vídeo i ofereix una reproducció fluida</value>
+  </data>
+  <data name="IntroPageHeading" xml:space="preserve">
+    <value>Benvingut a Sinai Player</value>
+  </data>
+  <data name="Continue" xml:space="preserve">
+    <value>Continua</value>
+  </data>
+  <data name="QueueList" xml:space="preserve">
+    <value>Cua de reproducció</value>
+  </data>
+  <data name="EmptyViewTitle" xml:space="preserve">
+    <value>No s'ha trobat res</value>
+  </data>
+  <data name="EmptyViewSubTitle" xml:space="preserve">
+    <value>Sembla que no s'ha trobat cap {0} a les carpetes seleccionades. Tria'n una de diferent</value>
+  </data>
+  <data name="ImportFolders" xml:space="preserve">
+    <value>Importa carpetes</value>
+  </data>
+  <data name="AddingItems" xml:space="preserve">
+    <value>S'estan afegint elements ({0}/{1})</value>
+  </data>
+  <data name="RemovingItems" xml:space="preserve">
+    <value>S'estan eliminant elements ({0}/{1})</value>
+  </data>
+  <data name="CheckingForNewItems" xml:space="preserve">
+    <value>S'estan cercant elements nous</value>
+  </data>
+  <data name="AddedItems" xml:space="preserve">
+    <value>Hem afegit {0} elements</value>
+  </data>
+  <data name="EmptyPlaylistViewTitle" xml:space="preserve">
+    <value>No hi ha llistes de reproducció</value>
+  </data>
+  <data name="EmptyPlaylistViewSubTitle" xml:space="preserve">
+    <value>Les llistes de reproducció que hagis creat apareixeran aquí</value>
+  </data>
+  <data name="RemovedItems" xml:space="preserve">
+    <value>Hem eliminat {0} elements</value>
+  </data>
+</root>

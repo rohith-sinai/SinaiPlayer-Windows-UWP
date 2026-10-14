@@ -1,0 +1,870 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{F8586862-7728-4A5F-958C-F5E0BEAEF886}</ProjectGuid>
+    <OutputType>AppContainerExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SinaiPlayer</RootNamespace>
+    <AssemblyName>SinaiPlayer</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
+    <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.19041.0</TargetPlatformVersion>
+    <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
+    <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WindowsXamlEnableOverview>true</WindowsXamlEnableOverview>
+    <AppxPackageSigningEnabled>false</AppxPackageSigningEnabled>
+    <GenerateAppInstallerFile>False</GenerateAppInstallerFile>
+    <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
+    <GenerateTestArtifacts>True</GenerateTestArtifacts>
+    <AppxBundle>Always</AppxBundle>
+    <AppxBundlePlatforms>x86|x64</AppxBundlePlatforms>
+    <HoursBetweenUpdateChecks>0</HoursBetweenUpdateChecks>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <OutputPath>bin\ARM\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM64'">
+    <OutputPath>bin\ARM64\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lib\Data\MediaDatabase.cs" />
+    <Compile Include="Lib\Data\PlaylistDatabase.cs" />
+    <Compile Include="Lib\Deezer\DeezerService.cs" />
+    <Compile Include="Lib\Dialogs\AddMediaFilesToPlaylistDailogContent.xaml.cs">
+      <DependentUpon>AddMediaFilesToPlaylistDailogContent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lib\Dialogs\AlbumInfoDialogContent.xaml.cs">
+      <DependentUpon>AlbumInfoDialogContent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lib\Dialogs\ArtistInfoDialogContent.xaml.cs">
+      <DependentUpon>ArtistInfoDialogContent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lib\Dialogs\DeveloperProfileDialogContent.xaml.cs">
+      <DependentUpon>DeveloperProfileDialogContent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lib\Dialogs\EditAlbumTagsDialogContent.xaml.cs">
+      <DependentUpon>EditAlbumTagsDialogContent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lib\Dialogs\EditSongTagsDialogContent.xaml.cs">
+      <DependentUpon>EditSongTagsDialogContent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lib\Dialogs\FeedbackPromptDialogContent.xaml.cs">
+      <DependentUpon>FeedbackPromptDialogContent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lib\Dialogs\NewPlaylistDialogContent.xaml.cs">
+      <DependentUpon>NewPlaylistDialogContent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lib\Dialogs\OpenSourceLicensesDialogContent.xaml.cs">
+      <DependentUpon>OpenSourceLicensesDialogContent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lib\Dialogs\PrivacyPolicyDialogContent.xaml.cs">
+      <DependentUpon>PrivacyPolicyDialogContent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lib\Dialogs\SleepTimerDialogContent.xaml.cs">
+      <DependentUpon>SleepTimerDialogContent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lib\Dialogs\SongInfoDialogContent.xaml.cs">
+      <DependentUpon>SongInfoDialogContent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lib\Dialogs\VideoInfoDialogContent.xaml.cs">
+      <DependentUpon>VideoInfoDialogContent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lib\Enums\MediaTypeEnum.cs" />
+    <Compile Include="Lib\Enums\RepeatModeEnum.cs" />
+    <Compile Include="Lib\Enums\SearchSuggestionType.cs" />
+    <Compile Include="Lib\Enums\SortOptionEnum.cs" />
+    <Compile Include="Lib\Helpers\ArtistNameHelper.cs" />
+    <Compile Include="Lib\Helpers\FormatHelper.cs" />
+    <Compile Include="Lib\Helpers\ListExtensions.cs" />
+    <Compile Include="Lib\Helpers\LocalizationHelper.cs" />
+    <Compile Include="Lib\Helpers\MathExtensions.cs" />
+    <Compile Include="Lib\Helpers\PlatformDeviceHelper.cs" />
+    <Compile Include="Lib\Helpers\ScreenHelper.cs" />
+    <Compile Include="Lib\Helpers\SortGroupingHelper.cs" />
+    <Compile Include="Lib\LastFM\LastfmService.cs" />
+    <Compile Include="Lib\Loaders\AlbumLoader.cs" />
+    <Compile Include="Lib\Loaders\ArtistLoader.cs" />
+    <Compile Include="Lib\Loaders\GenreLoader.cs" />
+    <Compile Include="Lib\Loaders\MediaLoader.cs" />
+    <Compile Include="Lib\Loaders\PlaylistLoader.cs" />
+    <Compile Include="Lib\Loaders\SongLoader.cs" />
+    <Compile Include="Lib\Loaders\VideoLoader.cs" />
+    <Compile Include="Lib\Models\Album.cs" />
+    <Compile Include="Lib\Models\Artist.cs" />
+    <Compile Include="Lib\Models\Genre.cs" />
+    <Compile Include="Lib\Models\MediaArtwork.cs" />
+    <Compile Include="Lib\Models\MediaFile.cs" />
+    <Compile Include="Lib\Models\MediaFolder.cs" />
+    <Compile Include="Lib\Models\MediaRecord.cs" />
+    <Compile Include="Lib\Models\PaletteCacheModel.cs" />
+    <Compile Include="Lib\Models\Playlist.cs" />
+    <Compile Include="Lib\Models\PlaylistItem.cs" />
+    <Compile Include="Lib\Models\PlaylistItemRecord.cs" />
+    <Compile Include="Lib\Models\PlaylistRecord.cs" />
+    <Compile Include="Lib\Models\SearchSuggestionItem.cs" />
+    <Compile Include="Lib\Repos\LibraryRepository.cs" />
+    <Compile Include="Lib\Repos\PlaylistRepository.cs" />
+    <Compile Include="Lib\Services\LibrarySyncService.cs" />
+    <Compile Include="Lib\Services\MediaPlayerService.cs" />
+    <Compile Include="Lib\Services\TileService.cs" />
+    <Compile Include="Lib\Thumbnails\ArtistThumbnailRequest.cs" />
+    <Compile Include="Lib\Thumbnails\SongThumbnailRequest.cs" />
+    <Compile Include="Lib\Thumbnails\VideoThumbnailRequest.cs" />
+    <Compile Include="Lib\UI\Adapters\AlbumGridAdapter.xaml.cs">
+      <DependentUpon>AlbumGridAdapter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lib\UI\Adapters\ArtistGridAdapter.xaml.cs">
+      <DependentUpon>ArtistGridAdapter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lib\UI\Adapters\NowPlayingPagerAdapter.xaml.cs">
+      <DependentUpon>NowPlayingPagerAdapter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lib\UI\Adapters\PlaylistGridAdapter.xaml.cs">
+      <DependentUpon>PlaylistGridAdapter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lib\UI\Adapters\PlaylistSongAdapter.xaml.cs">
+      <DependentUpon>PlaylistSongAdapter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lib\UI\Adapters\QueueAdapter.xaml.cs">
+      <DependentUpon>QueueAdapter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lib\UI\Adapters\SearchSuggestionItemAdapter.xaml.cs">
+      <DependentUpon>SearchSuggestionItemAdapter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lib\UI\Adapters\SongAdapter.xaml.cs">
+      <DependentUpon>SongAdapter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lib\UI\Adapters\VideoGridAdapter.xaml.cs">
+      <DependentUpon>VideoGridAdapter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lib\UI\Lists\AlbumsGroupedGridView.xaml.cs">
+      <DependentUpon>AlbumsGroupedGridView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lib\UI\Lists\AlbumsRegularGridView.xaml.cs">
+      <DependentUpon>AlbumsRegularGridView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lib\UI\Lists\PlaylistsGroupedGridView.xaml.cs">
+      <DependentUpon>PlaylistsGroupedGridView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lib\UI\Lists\PlaylistsRegularGridView.xaml.cs">
+      <DependentUpon>PlaylistsRegularGridView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lib\UI\Lists\SongsGroupedListView.xaml.cs">
+      <DependentUpon>SongsGroupedListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lib\UI\Lists\SongsRegularListView.xaml.cs">
+      <DependentUpon>SongsRegularListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lib\UI\Lists\VideosGroupedGridView.xaml.cs">
+      <DependentUpon>VideosGroupedGridView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lib\UI\Lists\VideosRegularGridView.xaml.cs">
+      <DependentUpon>VideosRegularGridView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lib\UI\Pages\AlbumDetailsPage.xaml.cs">
+      <DependentUpon>AlbumDetailsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lib\UI\Pages\AlbumsPage.xaml.cs">
+      <DependentUpon>AlbumsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lib\UI\Pages\ArtistDetailsPage.xaml.cs">
+      <DependentUpon>ArtistDetailsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lib\UI\Pages\ArtistsPage.xaml.cs">
+      <DependentUpon>ArtistsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lib\UI\Pages\IntroPage.xaml.cs">
+      <DependentUpon>IntroPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lib\UI\Pages\MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lib\UI\Pages\MusicPage.xaml.cs">
+      <DependentUpon>MusicPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lib\UI\Pages\Player\ArtistSlideshowContainer.xaml.cs">
+      <DependentUpon>ArtistSlideshowContainer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lib\UI\Pages\Player\LyricsPage.xaml.cs">
+      <DependentUpon>LyricsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lib\UI\Pages\Player\MiniPlayerPanel.xaml.cs">
+      <DependentUpon>MiniPlayerPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lib\UI\Pages\Player\NowPlayingPage.xaml.cs">
+      <DependentUpon>NowPlayingPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lib\UI\Pages\Player\PlayerBackgroundContainer.xaml.cs">
+      <DependentUpon>PlayerBackgroundContainer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lib\UI\Pages\Player\PlayerControls.xaml.cs">
+      <DependentUpon>PlayerControls.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lib\UI\Pages\Player\PlayerPager.xaml.cs">
+      <DependentUpon>PlayerPager.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lib\UI\Pages\Player\QueuePage.xaml.cs">
+      <DependentUpon>QueuePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lib\UI\Pages\PlaylistDetailsPage.xaml.cs">
+      <DependentUpon>PlaylistDetailsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lib\UI\Pages\PlaylistsPage.xaml.cs">
+      <DependentUpon>PlaylistsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lib\UI\Pages\SearchPage.xaml.cs">
+      <DependentUpon>SearchPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lib\UI\Pages\SettingsPage.xaml.cs">
+      <DependentUpon>SettingsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lib\UI\Pages\SongsPage.xaml.cs">
+      <DependentUpon>SongsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lib\UI\Pages\VideosPage.xaml.cs">
+      <DependentUpon>VideosPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lib\UI\ViewModels\AlbumViewModel.cs" />
+    <Compile Include="Lib\UI\ViewModels\ArtistSlideshowViewModel.cs" />
+    <Compile Include="Lib\UI\ViewModels\ArtistViewModel.cs" />
+    <Compile Include="Lib\UI\ViewModels\BaseViewModel.cs" />
+    <Compile Include="Lib\UI\ViewModels\MiniPlayerViewModel.cs" />
+    <Compile Include="Lib\UI\ViewModels\PlayerViewModel.cs" />
+    <Compile Include="Lib\UI\ViewModels\PlaylistItemViewModel.cs" />
+    <Compile Include="Lib\UI\ViewModels\PlaylistViewModel.cs" />
+    <Compile Include="Lib\UI\ViewModels\QueueViewModel.cs" />
+    <Compile Include="Lib\UI\ViewModels\SearchSuggestionViewModel.cs" />
+    <Compile Include="Lib\UI\ViewModels\SongViewModel.cs" />
+    <Compile Include="Lib\UI\ViewModels\VideoViewModel.cs" />
+    <Compile Include="Lib\Utils\Animations\SpringAnimator.cs" />
+    <Compile Include="Lib\Utils\ColorUtils.cs" />
+    <Compile Include="Lib\Utils\DialogUtils.cs" />
+    <Compile Include="Lib\Utils\FolderManager.cs" />
+    <Compile Include="Lib\Utils\GroupInfoCollection.cs" />
+    <Compile Include="Lib\Utils\MediaCacheManager.cs" />
+    <Compile Include="Lib\Utils\MediaRecordMapper.cs" />
+    <Compile Include="Lib\Utils\NavigationUtils.cs" />
+    <Compile Include="Lib\Utils\PlaylistMapper.cs" />
+    <Compile Include="Lib\Utils\PreferenceUtils.cs" />
+    <Compile Include="Lib\Utils\SimpleGrouping.cs" />
+    <Compile Include="Lib\Utils\SortOptionItem.cs" />
+    <Compile Include="Lib\Utils\TagEditor.cs" />
+    <Compile Include="Lib\Utils\ThumbnailUtils.cs" />
+    <Compile Include="Lib\Utils\WindowManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\contrast-black\LargeTile.scale-100.png" />
+    <Content Include="Assets\contrast-black\LargeTile.scale-125.png" />
+    <Content Include="Assets\contrast-black\LargeTile.scale-150.png" />
+    <Content Include="Assets\contrast-black\LargeTile.scale-200.png" />
+    <Content Include="Assets\contrast-black\LargeTile.scale-400.png" />
+    <Content Include="Assets\contrast-black\SmallTile.scale-100.png" />
+    <Content Include="Assets\contrast-black\SmallTile.scale-125.png" />
+    <Content Include="Assets\contrast-black\SmallTile.scale-150.png" />
+    <Content Include="Assets\contrast-black\SmallTile.scale-200.png" />
+    <Content Include="Assets\contrast-black\SmallTile.scale-400.png" />
+    <Content Include="Assets\contrast-black\SplashScreen.scale-100.png" />
+    <Content Include="Assets\contrast-black\SplashScreen.scale-125.png" />
+    <Content Include="Assets\contrast-black\SplashScreen.scale-150.png" />
+    <Content Include="Assets\contrast-black\SplashScreen.scale-200.png" />
+    <Content Include="Assets\contrast-black\SplashScreen.scale-400.png" />
+    <Content Include="Assets\contrast-black\Square150x150Logo.scale-100.png" />
+    <Content Include="Assets\contrast-black\Square150x150Logo.scale-125.png" />
+    <Content Include="Assets\contrast-black\Square150x150Logo.scale-150.png" />
+    <Content Include="Assets\contrast-black\Square150x150Logo.scale-200.png" />
+    <Content Include="Assets\contrast-black\Square150x150Logo.scale-400.png" />
+    <Content Include="Assets\contrast-black\Square44x44Logo.altform-lightunplated_targetsize-16.png" />
+    <Content Include="Assets\contrast-black\Square44x44Logo.altform-lightunplated_targetsize-24.png" />
+    <Content Include="Assets\contrast-black\Square44x44Logo.altform-lightunplated_targetsize-256.png" />
+    <Content Include="Assets\contrast-black\Square44x44Logo.altform-lightunplated_targetsize-32.png" />
+    <Content Include="Assets\contrast-black\Square44x44Logo.altform-lightunplated_targetsize-48.png" />
+    <Content Include="Assets\contrast-black\Square44x44Logo.altform-unplated_targetsize-16.png" />
+    <Content Include="Assets\contrast-black\Square44x44Logo.altform-unplated_targetsize-24.png" />
+    <Content Include="Assets\contrast-black\Square44x44Logo.altform-unplated_targetsize-256.png" />
+    <Content Include="Assets\contrast-black\Square44x44Logo.altform-unplated_targetsize-32.png" />
+    <Content Include="Assets\contrast-black\Square44x44Logo.altform-unplated_targetsize-48.png" />
+    <Content Include="Assets\contrast-black\Square44x44Logo.scale-100.png" />
+    <Content Include="Assets\contrast-black\Square44x44Logo.scale-125.png" />
+    <Content Include="Assets\contrast-black\Square44x44Logo.scale-150.png" />
+    <Content Include="Assets\contrast-black\Square44x44Logo.scale-200.png" />
+    <Content Include="Assets\contrast-black\Square44x44Logo.scale-400.png" />
+    <Content Include="Assets\contrast-black\Square44x44Logo.targetsize-16.png" />
+    <Content Include="Assets\contrast-black\Square44x44Logo.targetsize-24.png" />
+    <Content Include="Assets\contrast-black\Square44x44Logo.targetsize-256.png" />
+    <Content Include="Assets\contrast-black\Square44x44Logo.targetsize-32.png" />
+    <Content Include="Assets\contrast-black\Square44x44Logo.targetsize-48.png" />
+    <Content Include="Assets\contrast-black\StoreLogo.scale-100.png" />
+    <Content Include="Assets\contrast-black\StoreLogo.scale-125.png" />
+    <Content Include="Assets\contrast-black\StoreLogo.scale-150.png" />
+    <Content Include="Assets\contrast-black\StoreLogo.scale-200.png" />
+    <Content Include="Assets\contrast-black\StoreLogo.scale-400.png" />
+    <Content Include="Assets\contrast-black\Wide310x150Logo.scale-100.png" />
+    <Content Include="Assets\contrast-black\Wide310x150Logo.scale-125.png" />
+    <Content Include="Assets\contrast-black\Wide310x150Logo.scale-150.png" />
+    <Content Include="Assets\contrast-black\Wide310x150Logo.scale-200.png" />
+    <Content Include="Assets\contrast-black\Wide310x150Logo.scale-400.png" />
+    <Content Include="Assets\contrast-white\LargeTile.scale-100.png" />
+    <Content Include="Assets\contrast-white\LargeTile.scale-125.png" />
+    <Content Include="Assets\contrast-white\LargeTile.scale-150.png" />
+    <Content Include="Assets\contrast-white\LargeTile.scale-200.png" />
+    <Content Include="Assets\contrast-white\LargeTile.scale-400.png" />
+    <Content Include="Assets\contrast-white\SmallTile.scale-100.png" />
+    <Content Include="Assets\contrast-white\SmallTile.scale-125.png" />
+    <Content Include="Assets\contrast-white\SmallTile.scale-150.png" />
+    <Content Include="Assets\contrast-white\SmallTile.scale-200.png" />
+    <Content Include="Assets\contrast-white\SmallTile.scale-400.png" />
+    <Content Include="Assets\contrast-white\SplashScreen.scale-100.png" />
+    <Content Include="Assets\contrast-white\SplashScreen.scale-125.png" />
+    <Content Include="Assets\contrast-white\SplashScreen.scale-150.png" />
+    <Content Include="Assets\contrast-white\SplashScreen.scale-200.png" />
+    <Content Include="Assets\contrast-white\SplashScreen.scale-400.png" />
+    <Content Include="Assets\contrast-white\Square150x150Logo.scale-100.png" />
+    <Content Include="Assets\contrast-white\Square150x150Logo.scale-125.png" />
+    <Content Include="Assets\contrast-white\Square150x150Logo.scale-150.png" />
+    <Content Include="Assets\contrast-white\Square150x150Logo.scale-200.png" />
+    <Content Include="Assets\contrast-white\Square150x150Logo.scale-400.png" />
+    <Content Include="Assets\contrast-white\Square44x44Logo.altform-lightunplated_targetsize-16.png" />
+    <Content Include="Assets\contrast-white\Square44x44Logo.altform-lightunplated_targetsize-24.png" />
+    <Content Include="Assets\contrast-white\Square44x44Logo.altform-lightunplated_targetsize-256.png" />
+    <Content Include="Assets\contrast-white\Square44x44Logo.altform-lightunplated_targetsize-32.png" />
+    <Content Include="Assets\contrast-white\Square44x44Logo.altform-lightunplated_targetsize-48.png" />
+    <Content Include="Assets\contrast-white\Square44x44Logo.altform-unplated_targetsize-16.png" />
+    <Content Include="Assets\contrast-white\Square44x44Logo.altform-unplated_targetsize-24.png" />
+    <Content Include="Assets\contrast-white\Square44x44Logo.altform-unplated_targetsize-256.png" />
+    <Content Include="Assets\contrast-white\Square44x44Logo.altform-unplated_targetsize-32.png" />
+    <Content Include="Assets\contrast-white\Square44x44Logo.altform-unplated_targetsize-48.png" />
+    <Content Include="Assets\contrast-white\Square44x44Logo.scale-100.png" />
+    <Content Include="Assets\contrast-white\Square44x44Logo.scale-125.png" />
+    <Content Include="Assets\contrast-white\Square44x44Logo.scale-150.png" />
+    <Content Include="Assets\contrast-white\Square44x44Logo.scale-200.png" />
+    <Content Include="Assets\contrast-white\Square44x44Logo.scale-400.png" />
+    <Content Include="Assets\contrast-white\Square44x44Logo.targetsize-16.png" />
+    <Content Include="Assets\contrast-white\Square44x44Logo.targetsize-24.png" />
+    <Content Include="Assets\contrast-white\Square44x44Logo.targetsize-256.png" />
+    <Content Include="Assets\contrast-white\Square44x44Logo.targetsize-32.png" />
+    <Content Include="Assets\contrast-white\Square44x44Logo.targetsize-48.png" />
+    <Content Include="Assets\contrast-white\StoreLogo.scale-100.png" />
+    <Content Include="Assets\contrast-white\StoreLogo.scale-125.png" />
+    <Content Include="Assets\contrast-white\StoreLogo.scale-150.png" />
+    <Content Include="Assets\contrast-white\StoreLogo.scale-200.png" />
+    <Content Include="Assets\contrast-white\StoreLogo.scale-400.png" />
+    <Content Include="Assets\contrast-white\Wide310x150Logo.scale-100.png" />
+    <Content Include="Assets\contrast-white\Wide310x150Logo.scale-125.png" />
+    <Content Include="Assets\contrast-white\Wide310x150Logo.scale-150.png" />
+    <Content Include="Assets\contrast-white\Wide310x150Logo.scale-200.png" />
+    <Content Include="Assets\contrast-white\Wide310x150Logo.scale-400.png" />
+    <Content Include="Assets\LargeTile.scale-100.png" />
+    <Content Include="Assets\LargeTile.scale-125.png" />
+    <Content Include="Assets\LargeTile.scale-150.png" />
+    <Content Include="Assets\LargeTile.scale-200.png" />
+    <Content Include="Assets\LargeTile.scale-400.png" />
+    <Content Include="Assets\SmallTile.scale-100.png" />
+    <Content Include="Assets\SmallTile.scale-125.png" />
+    <Content Include="Assets\SmallTile.scale-150.png" />
+    <Content Include="Assets\SmallTile.scale-200.png" />
+    <Content Include="Assets\SmallTile.scale-400.png" />
+    <Content Include="Assets\SplashScreen.scale-100.png" />
+    <Content Include="Assets\SplashScreen.scale-125.png" />
+    <Content Include="Assets\SplashScreen.scale-150.png" />
+    <Content Include="Assets\SplashScreen.scale-200.png" />
+    <Content Include="Assets\SplashScreen.scale-400.png" />
+    <Content Include="Assets\Square150x150Logo.scale-100.png" />
+    <Content Include="Assets\Square150x150Logo.scale-125.png" />
+    <Content Include="Assets\Square150x150Logo.scale-150.png" />
+    <Content Include="Assets\Square150x150Logo.scale-200.png" />
+    <Content Include="Assets\Square150x150Logo.scale-400.png" />
+    <Content Include="Assets\Square44x44Logo.altform-lightunplated_targetsize-16.png" />
+    <Content Include="Assets\Square44x44Logo.altform-lightunplated_targetsize-24.png" />
+    <Content Include="Assets\Square44x44Logo.altform-lightunplated_targetsize-256.png" />
+    <Content Include="Assets\Square44x44Logo.altform-lightunplated_targetsize-32.png" />
+    <Content Include="Assets\Square44x44Logo.altform-lightunplated_targetsize-48.png" />
+    <Content Include="Assets\Square44x44Logo.altform-unplated_targetsize-16.png" />
+    <Content Include="Assets\Square44x44Logo.altform-unplated_targetsize-24.png" />
+    <Content Include="Assets\Square44x44Logo.altform-unplated_targetsize-256.png" />
+    <Content Include="Assets\Square44x44Logo.altform-unplated_targetsize-32.png" />
+    <Content Include="Assets\Square44x44Logo.altform-unplated_targetsize-48.png" />
+    <Content Include="Assets\Square44x44Logo.scale-100.png" />
+    <Content Include="Assets\Square44x44Logo.scale-125.png" />
+    <Content Include="Assets\Square44x44Logo.scale-150.png" />
+    <Content Include="Assets\Square44x44Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.scale-400.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-16.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-24.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-256.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-32.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-48.png" />
+    <Content Include="Assets\StoreLogo.scale-100.png" />
+    <Content Include="Assets\StoreLogo.scale-125.png" />
+    <Content Include="Assets\StoreLogo.scale-150.png" />
+    <Content Include="Assets\StoreLogo.scale-200.png" />
+    <Content Include="Assets\StoreLogo.scale-400.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-100.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-125.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-150.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-200.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-400.png" />
+    <Content Include="Package.StoreAssociation.xml" />
+    <Content Include="Properties\Default.rd.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Uwp.Animations">
+      <Version>8.2.251219</Version>
+    </PackageReference>
+    <PackageReference Include="CommunityToolkit.Uwp.Controls.Segmented">
+      <Version>8.2.251219</Version>
+    </PackageReference>
+    <PackageReference Include="CommunityToolkit.Uwp.Controls.SettingsControls">
+      <Version>8.2.251219</Version>
+    </PackageReference>
+    <PackageReference Include="CommunityToolkit.Uwp.Extensions">
+      <Version>8.2.251219</Version>
+    </PackageReference>
+    <PackageReference Include="CommunityToolkit.Uwp.Helpers">
+      <Version>8.2.251219</Version>
+    </PackageReference>
+    <PackageReference Include="LibVLCSharp">
+      <Version>3.1.0</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
+      <Version>6.2.12</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Toolkit.Uwp.Notifications">
+      <Version>7.1.3</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.UI.Xaml">
+      <Version>2.8.7</Version>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>13.0.4</Version>
+    </PackageReference>
+    <PackageReference Include="sqlite-net-pcl">
+      <Version>1.5.231</Version>
+    </PackageReference>
+    <PackageReference Include="SQLitePCLRaw.bundle_green">
+      <Version>1.1.14</Version>
+    </PackageReference>
+    <PackageReference Include="VideoLAN.LibVLC.UWP">
+      <Version>3.1.0</Version>
+    </PackageReference>
+    <PackageReference Include="Win2D.uwp">
+      <Version>1.28.3</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="Strings\ar-SA\Resources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="Strings\ca-ES\Resources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="Strings\da-DK\Resources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="Strings\de-DE\Resources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="Strings\el-GR\Resources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="Strings\en-US\Resources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="Strings\es-MX\Resources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="Strings\et-EE\Resources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="Strings\fi-FI\Resources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="Strings\fil-PH\Resources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="Strings\fr-FR\Resources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="Strings\ga-IE\Resources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="Strings\he-IL\Resources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="Strings\hu-HU\Resources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="Strings\id-ID\Resources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="Strings\it-IT\Resources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="Strings\ja-JP\Resources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="Strings\ka-GE\Resources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="Strings\ko-KR\Resources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="Strings\nl-NL\Resources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="Strings\pt-PT\Resources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="Strings\ro-RO\Resources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="Strings\ru-RU\Resources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="Strings\sv-SE\Resources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="Strings\th-TH\Resources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="Strings\tr-TR\Resources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="Strings\uk-UA\Resources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="Strings\ur-PK\Resources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="Strings\vi-VN\Resources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="Strings\zh-CN\Resources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Lib\Dialogs\AddMediaFilesToPlaylistDailogContent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lib\Dialogs\AlbumInfoDialogContent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lib\Dialogs\ArtistInfoDialogContent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lib\Dialogs\DeveloperProfileDialogContent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lib\Dialogs\EditAlbumTagsDialogContent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lib\Dialogs\EditSongTagsDialogContent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lib\Dialogs\FeedbackPromptDialogContent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lib\Dialogs\NewPlaylistDialogContent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lib\Dialogs\OpenSourceLicensesDialogContent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lib\Dialogs\PrivacyPolicyDialogContent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lib\Dialogs\SleepTimerDialogContent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lib\Dialogs\SongInfoDialogContent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lib\Dialogs\VideoInfoDialogContent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lib\UI\Adapters\AlbumGridAdapter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lib\UI\Adapters\ArtistGridAdapter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lib\UI\Adapters\NowPlayingPagerAdapter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lib\UI\Adapters\PlaylistGridAdapter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lib\UI\Adapters\PlaylistSongAdapter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lib\UI\Adapters\QueueAdapter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lib\UI\Adapters\SearchSuggestionItemAdapter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lib\UI\Adapters\SongAdapter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lib\UI\Adapters\VideoGridAdapter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lib\UI\Lists\AlbumsGroupedGridView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lib\UI\Lists\AlbumsRegularGridView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lib\UI\Lists\PlaylistsGroupedGridView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lib\UI\Lists\PlaylistsRegularGridView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lib\UI\Lists\SongsGroupedListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lib\UI\Lists\SongsRegularListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lib\UI\Lists\VideosGroupedGridView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lib\UI\Lists\VideosRegularGridView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lib\UI\Pages\AlbumDetailsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lib\UI\Pages\AlbumsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lib\UI\Pages\ArtistDetailsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lib\UI\Pages\ArtistsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lib\UI\Pages\IntroPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lib\UI\Pages\MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lib\UI\Pages\MusicPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lib\UI\Pages\Player\ArtistSlideshowContainer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lib\UI\Pages\Player\LyricsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lib\UI\Pages\Player\MiniPlayerPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lib\UI\Pages\Player\NowPlayingPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lib\UI\Pages\Player\PlayerBackgroundContainer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lib\UI\Pages\Player\PlayerControls.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lib\UI\Pages\Player\PlayerPager.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lib\UI\Pages\Player\QueuePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lib\UI\Pages\PlaylistDetailsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lib\UI\Pages\PlaylistsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lib\UI\Pages\SearchPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lib\UI\Pages\SettingsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lib\UI\Pages\SongsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lib\UI\Pages\VideosPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
+    <VisualStudioVersion>14.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

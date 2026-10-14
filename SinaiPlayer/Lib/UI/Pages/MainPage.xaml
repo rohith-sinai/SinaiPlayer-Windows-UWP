@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="SinaiPlayer.Lib.UI.Pages.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+    xmlns:animatedvisuals="using:Microsoft.UI.Xaml.Controls.AnimatedVisuals"
+    xmlns:local="using:SinaiPlayer.Lib.UI.Pages"
+    xmlns:players="using:SinaiPlayer.Lib.UI.Pages.Player"
+    xmlns:vm="using:SinaiPlayer.Lib.UI.ViewModels"
+    xmlns:adapters="using:SinaiPlayer.Lib.UI.Adapters"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    NavigationCacheMode="Enabled">
+    
+    <Page.Resources>
+        <DataTemplate x:Key="MiniPlayerTemplate" x:DataType="vm:MiniPlayerViewModel">
+            <players:MiniPlayerPanel />
+        </DataTemplate>
+    </Page.Resources>
+    
+    <Grid>
+      <muxc:NavigationView x:Name="NavView" Loaded="NavView_Loaded" ItemInvoked="NavView_ItemInvoked" BackRequested="NavView_BackRequested" IsBackEnabled="False" IsSettingsVisible="False" IsTitleBarAutoPaddingEnabled="False"> 
+            
+            <!--Search box-->
+            <muxc:NavigationView.AutoSuggestBox>
+                <AutoSuggestBox x:Name="SearchBox" QueryIcon="Find" QuerySubmitted="SearchBox_QuerySubmitted" TextChanged="SearchBox_TextChanged" SuggestionChosen="SearchBox_SuggestionChosen"> 
+                    <AutoSuggestBox.ItemTemplate>
+                        <DataTemplate x:DataType="vm:SearchSuggestionViewModel">
+                            <adapters:SearchSuggestionItemAdapter/>
+                        </DataTemplate>
+                    </AutoSuggestBox.ItemTemplate>
+                </AutoSuggestBox>
+            </muxc:NavigationView.AutoSuggestBox>
+            <!--Menu Items-->
+            <muxc:NavigationView.MenuItems>
+                
+                <!--Music-->
+                <muxc:NavigationViewItem x:Name="NavItemMusic" Tag="Music">
+                    <muxc:NavigationViewItem.Icon>
+                        <FontIcon Glyph="&#xE7F6;" FontFamily="Segoe Fluent Icons, Segoe MDL2 Assets"/>
+                    </muxc:NavigationViewItem.Icon>
+                </muxc:NavigationViewItem>
+                <!--Videos-->
+                <muxc:NavigationViewItem x:Name="NavItemVideos" Tag="Videos">
+                    <muxc:NavigationViewItem.Icon>
+                        <FontIcon Glyph="&#xE714;" FontFamily="Segoe Fluent Icons, Segoe MDL2 Assets"  />
+                    </muxc:NavigationViewItem.Icon>
+                </muxc:NavigationViewItem>
+                <!--Now Playing-->
+                <muxc:NavigationViewItem x:Name="NavItemPlayer" Tag="Player">
+                    <muxc:NavigationViewItem.Icon>
+                        <FontIcon Glyph="&#xE786;" FontFamily="Segoe Fluent Icons, Segoe MDL2 Assets"/>
+                    </muxc:NavigationViewItem.Icon>
+                </muxc:NavigationViewItem>
+                <!--Playlists-->
+                <muxc:NavigationViewItem x:Name="NavItemPlaylists" Tag="Playlists">
+                    <muxc:NavigationViewItem.Icon>
+                        <FontIcon Glyph="&#xF0E2;" FontFamily="Segoe Fluent Icons, Segoe MDL2 Assets"/>
+                    </muxc:NavigationViewItem.Icon>
+                </muxc:NavigationViewItem>
+            </muxc:NavigationView.MenuItems>
+
+            <muxc:NavigationView.PaneFooter>
+                <StackPanel>
+                    <muxc:NavigationViewItem x:Name="UpdatingInfoNavItem" SelectsOnInvoked="False" IsTapEnabled="False" IsHitTestVisible="False" Visibility="Collapsed">
+                        <muxc:NavigationViewItem.Content>
+                            <StackPanel Orientation="Horizontal" Padding="0">
+                                <muxc:ProgressRing x:Name="UpdateInfo_ProgressRing" IsActive="True" Height="16" Width="16"/>
+                                <TextBlock x:Name="UpdateInfo_TextBlock" VerticalAlignment="Center" Margin="14,0,0,0" />
+                            </StackPanel>
+                        </muxc:NavigationViewItem.Content>
+                    </muxc:NavigationViewItem>
+                    <muxc:NavigationViewItemSeparator />
+                    <muxc:NavigationViewItem x:Name="NavItemSettings" Tag="Settings" Tapped="Settings_Tapped">
+                        <muxc:NavigationViewItem.Icon>
+                            <muxc:AnimatedIcon x:Name='AnimatedIcon'>
+                                <muxc:AnimatedIcon.Source>
+                                    <animatedvisuals:AnimatedSettingsVisualSource/>
+                                </muxc:AnimatedIcon.Source>
+                                <muxc:AnimatedIcon.FallbackIconSource>
+                                    <muxc:FontIconSource FontFamily="Segoe Fluent Icons, Segoe MDL2 Assets" Glyph="&#xE713;"/>
+                                </muxc:AnimatedIcon.FallbackIconSource>
+                            </muxc:AnimatedIcon>
+                        </muxc:NavigationViewItem.Icon>
+
+                    </muxc:NavigationViewItem>
+                    <muxc:NavigationViewItem x:Name="BottomSpacerInNavBar" SelectsOnInvoked="False" IsEnabled="False" Height="0"/>
+                </StackPanel>
+            </muxc:NavigationView.PaneFooter>
+
+            <!-- Content Frame -->
+            <Grid>
+                <Frame x:Name="frame" Navigated="ContentFrame_Navigated"/>
+                <Grid x:Name="MiniPlayer_Mobile" VerticalAlignment="Bottom" Visibility="Collapsed">
+                    <ContentControl Content="{x:Bind _miniPlayerViewModel, Mode=OneWay}" ContentTemplate="{StaticResource MiniPlayerTemplate}" HorizontalAlignment="Stretch"  HorizontalContentAlignment="Stretch"/>
+                </Grid>
+            </Grid>
+
+        </muxc:NavigationView>
+
+        <!-- Mini Player -->
+        <Grid x:Name="MiniPlayer_Tablet" VerticalAlignment="Bottom" Visibility="Collapsed">
+            <ContentControl Content="{x:Bind _miniPlayerViewModel, Mode=OneWay}" ContentTemplate="{StaticResource MiniPlayerTemplate}" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch"/>
+        </Grid>
+
+        <Grid x:Name="TitleBar" Margin="56,0,0,0" VerticalAlignment="Top" Background="Transparent" MinHeight="36">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="6,12,0,0">
+                <Image Source="/Assets/Square44x44Logo.altform-unplated_targetsize-16.png" Height="16.7" Width="16.7" Stretch="Uniform" />
+                <TextBlock x:Name="AppNameTextBlock" Style="{StaticResource CaptionTextBlockStyle}"  Margin="10,0,0,0"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Page>

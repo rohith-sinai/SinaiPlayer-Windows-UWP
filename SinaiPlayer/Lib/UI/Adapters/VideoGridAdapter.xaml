@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UserControl
+    x:Class="SinaiPlayer.Lib.UI.Adapters.VideoGridAdapter"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SinaiPlayer.Lib.UI.Adapters"
+    xmlns:vm="using:SinaiPlayer.Lib.UI.ViewModels"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid DoubleTapped="Item_DoubleTapped" IsDoubleTapEnabled="True">
+        <Grid.ContextFlyout>
+            <MenuFlyout>
+                <MenuFlyoutSubItem x:Name="PlayMenuFlyoutSubItem">
+                    <MenuFlyoutSubItem.Icon>
+                        <FontIcon Glyph="&#xE768;" FontFamily="Segoe Fluent Icons, Segoe MDL2 Assets"/>
+                    </MenuFlyoutSubItem.Icon>
+                    <MenuFlyoutItem x:Name="PlayNowMenuFlyoutItem" Click="PlayNow_FlyoutItem_Click"/>
+                    <MenuFlyoutItem x:Name="PlayNextMenuFlyoutItem" Click="PlayNext_FlyoutItem_Click"/>
+                    <MenuFlyoutItem x:Name="PlayLastMenuFlyoutItem" Click="PlayLast_FlyoutItem_Click"/>
+                </MenuFlyoutSubItem>
+
+                <MenuFlyoutItem x:Name="AddToPlaylistMenuFlyoutItem" Click="AddToPlaylist_FlyoutItem_Click">
+                    <MenuFlyoutItem.Icon>
+                        <FontIcon Glyph="&#xE710;" FontFamily="Segoe Fluent Icons, Segoe MDL2 Assets"/>
+                    </MenuFlyoutItem.Icon>
+                </MenuFlyoutItem>
+                <MenuFlyoutItem x:Name="InfoMenuFlyoutItem" Click="Properties_FlyoutItem_Click">
+                    <MenuFlyoutItem.Icon>
+                        <FontIcon Glyph="&#xE946;" FontFamily="Segoe Fluent Icons, Segoe MDL2 Assets"/>
+                    </MenuFlyoutItem.Icon>
+                </MenuFlyoutItem>
+                <MenuFlyoutItem x:Name="DeleteMenuFlyoutItem" Click="Delete_FlyoutItem_Click">
+                    <MenuFlyoutItem.Icon>
+                        <FontIcon Glyph="&#xE74D;" FontFamily="Segoe Fluent Icons, Segoe MDL2 Assets"/>
+                    </MenuFlyoutItem.Icon>
+                </MenuFlyoutItem>
+            </MenuFlyout>
+        </Grid.ContextFlyout>
+
+        <StackPanel Margin="8" Width="180">
+
+            <Grid Height="120" Width="180" CornerRadius="8">
+                <Rectangle Fill="{ThemeResource LayerOnMicaBaseAltFillColorDefaultBrush}" />
+                <FontIcon Glyph="&#xE8B2;"  FontSize="45" FontFamily="Segoe Fluent Icons, Segoe MDL2 Assets" Foreground="{ThemeResource ControlFillColorDefaultBrush}"/>
+                <Image Source="{x:Bind ((vm:VideoViewModel)DataContext).Image, Mode=OneWay}" Stretch="Fill" />
+                <Border Background="Transparent" Opacity="0.2" BorderBrush="{ThemeResource SystemControlBackgroundBaseMediumLowBrush}" BorderThickness="1" CornerRadius="8"/>
+            </Grid>
+
+
+            <TextBlock Text="{x:Bind ((vm:VideoViewModel)DataContext).Title, Mode=OneWay}" Style="{StaticResource BodyTextBlockStyle}" Margin="0,8,0,0" MaxLines="1" />
+
+            <TextBlock Text="{x:Bind ((vm:VideoViewModel)DataContext).SubTitle, Mode=OneWay}" Style="{StaticResource CaptionTextBlockStyle}" Opacity="0.7" MaxLines="1" />
+
+        </StackPanel>
+    </Grid>
+
+    
+</UserControl>

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="SinaiPlayer.Lib.UI.Pages.AlbumDetailsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SinaiPlayer.Lib.UI.Pages"
+    xmlns:adapters="using:SinaiPlayer.Lib.UI.Adapters"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid>
+
+        <!-- ============================= BODY (scrollable) ============================= -->
+        <ScrollViewer x:Name="BodyScrollViewer" VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Disabled" ZoomMode="Disabled" ViewChanged="BodyScrollViewer_ViewChanged" Padding="0">
+            <StackPanel>
+
+                <Grid Height="310" Background="Transparent"/>
+
+                <!-- ===================== CONTENT VIEW ===================== -->
+                <ListView x:Name="Songs_ListView" Padding="20,0,20,0">
+
+                    <ListView.ItemContainerTransitions>
+                        <TransitionCollection>
+                            <ContentThemeTransition />
+                        </TransitionCollection>
+                    </ListView.ItemContainerTransitions>
+
+                    <ListView.Resources>
+                        <x:Boolean x:Key="ListViewItemSelectionIndicatorVisualEnabled">False</x:Boolean>
+                    </ListView.Resources>
+
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <adapters:SongAdapter ItemClickEvent="Adapter_ItemClickEvent" ShowIndex="True"/>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+
+                    <ListView.FooterTemplate>
+                        <DataTemplate>
+                            <Grid Height="85" />
+                        </DataTemplate>
+                    </ListView.FooterTemplate>
+                </ListView>
+ 
+            </StackPanel>
+        </ScrollViewer>
+
+        <!-- ============================= APP BAR (fixed overlay) ============================= -->
+        <!-- Starts fully transparent (so body shows through / "scrolls behind" it),
+       and fades to a solid color as the user scrolls, just like Groove's title bar. -->
+
+        <Grid x:Name="AppBarHost" Height="300" VerticalAlignment="Top"  HorizontalAlignment="Stretch">
+ 
+            <Rectangle Fill="{ThemeResource AcrylicInAppFillColorDefaultBrush}" />
+            <Rectangle x:Name="PaletteView"  Opacity="0.7" />
+            <Rectangle Fill="Black" Opacity="0.5" />
+
+            <StackPanel>
+
+                <Grid Height="70" />
+
+                <Grid VerticalAlignment="Stretch">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Viewbox x:Name="ArtworkBorder" Width="200" Height="200" Stretch="Uniform" StretchDirection="Both" Margin="30,0,0,0">
+                        <Grid Width="200" Height="200" CornerRadius="8">
+                            <!--Imager Container Background-->
+                            <Rectangle Fill="{ThemeResource ControlOnImageFillColorDefaultBrush}" />
+                            <!--Placeholder Icon-->
+                            <FontIcon Glyph="&#xEB9F;" FontSize="60" FontFamily="Segoe Fluent Icons, Segoe MDL2 Assets" Foreground="{ThemeResource ControlFillColorDefaultBrush}"/>
+                            <!--Actual Image-->
+                            <Image x:Name="CoverArtImage" Stretch="Fill"/>
+                            <!--Image Container Border-->
+                            <Border Background="Transparent" Opacity="0.2" BorderBrush="{ThemeResource SystemControlBackgroundBaseMediumLowBrush}" BorderThickness="1" CornerRadius="8"/>
+                        </Grid>
+                    </Viewbox>
+
+                    <Grid Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="30,0,0,0" MaxHeight="180">
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <StackPanel Grid.Row="0" VerticalAlignment="Top">
+                            <TextBlock x:Name="Title_TextBlock" Style="{StaticResource TitleTextBlockStyle}"/>
+
+                            <TextBlock x:Name="SubTitle_TextBlock" IsTapEnabled="True" Tapped="SubTitle_TextBlock_Tapped" Style="{StaticResource BodyStrongTextBlockStyle}" Opacity="0.7"/>
+                        </StackPanel>
+
+
+                        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0,12,0,0" Spacing="12" VerticalAlignment="Bottom">
+                            <Button x:Name="PlayButton" Click="PlayButton_Click">
+                                <StackPanel Orientation="Horizontal" Spacing="12">
+                                    <FontIcon Glyph="&#xE768;" FontSize="16" FontFamily="Segoe Fluent Icons, Segoe MDL2 Assets"/>
+                                    <TextBlock x:Name="PlayButtonTextBlock"  />
+                                </StackPanel>
+                            </Button>
+                            <Button x:Name="ShuffleButton" Click="ShuffleButton_Click">
+                                <StackPanel Orientation="Horizontal" Spacing="12">
+                                    <FontIcon Glyph="&#xE8B1;" FontSize="16" FontFamily="Segoe Fluent Icons, Segoe MDL2 Assets"/>
+                                    <TextBlock x:Name="ShuffleButtonTextBlock" />
+                                </StackPanel>
+                            </Button>
+                            <Button x:Name="AddToPlaylistButton" Click="AddToPlaylistButton_Click">
+                                <StackPanel Orientation="Horizontal" Spacing="12">
+                                    <FontIcon Glyph="&#xE710;" FontSize="16" FontFamily="Segoe Fluent Icons, Segoe MDL2 Assets"/>
+                                    <TextBlock x:Name="AddToPlaylistButtonTextBlock" />
+                                </StackPanel>
+                            </Button>
+                            <Button x:Name="EditButton" Click="EditButton_Click">
+                                <StackPanel Orientation="Horizontal" Spacing="12">
+                                    <FontIcon Glyph="&#xE70F;" FontSize="16" FontFamily="Segoe Fluent Icons, Segoe MDL2 Assets"/>
+                                    <TextBlock x:Name="EditButtonTextBlock" />
+                                </StackPanel>
+                            </Button>
+                            <Button x:Name="DeleteButton" Click="DeleteButton_Click">
+                                <StackPanel Orientation="Horizontal" Spacing="12">
+                                    <FontIcon Glyph="&#xE74D;" FontSize="16" FontFamily="Segoe Fluent Icons, Segoe MDL2 Assets"/>
+                                    <TextBlock x:Name="DeleteButtonTextBlock" />
+                                </StackPanel>
+                            </Button>
+                        </StackPanel>
+
+                    </Grid>
+
+                </Grid>
+            </StackPanel>
+
+        </Grid>
+    </Grid>
+
+</Page>

@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UserControl
+    x:Class="SinaiPlayer.Lib.UI.Pages.Player.PlayerControls"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SinaiPlayer.Lib.UI.Pages.Player"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <UserControl.Resources>
+        <!-- Resource Dictionary overrides scoped only to this page -->
+        <ResourceDictionary>
+            <!-- Background when Checked -->
+            <SolidColorBrush x:Key="ToggleButtonBackgroundChecked" Color="White" Opacity="0.6"/>
+            <SolidColorBrush x:Key="ToggleButtonBackgroundCheckedPointerOver" Color="LightGray"/>
+            <SolidColorBrush x:Key="ToggleButtonBackgroundCheckedPressed" Color="LightGray"/>
+
+            <!-- Foreground (Text) when Checked -->
+            <SolidColorBrush x:Key="ToggleButtonForeground" Color="White"/>
+            <SolidColorBrush x:Key="ToggleButtonForegroundChecked" Color="Black"/>
+            <SolidColorBrush x:Key="ToggleButtonForegroundCheckedPointerOver" Color="Black"/>
+            <SolidColorBrush x:Key="ToggleButtonForegroundCheckedPressed" Color="Black"/>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    
+    <Grid>
+        <Grid.Resources> 
+            <Storyboard x:Name="SlideOutStoryboard" Completed="SlideOutStoryboard_Completed">
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="ControlTransform" Storyboard.TargetProperty="TranslateY" EnableDependentAnimation="True">
+                    <SplineDoubleKeyFrame KeyTime="0:0:0.35" Value="40.0" KeySpline="0.1,0.9,0.2,1"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="SlidingContainer" Storyboard.TargetProperty="Opacity">
+                    <SplineDoubleKeyFrame KeyTime="0:0:0.35" Value="0.0" KeySpline="0.1,0.9,0.2,1"/>
+                </DoubleAnimationUsingKeyFrames>
+            </Storyboard>
+
+            <Storyboard x:Name="SlideInStoryboard">
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="ControlTransform" Storyboard.TargetProperty="TranslateY" EnableDependentAnimation="True">
+                    <SplineDoubleKeyFrame KeyTime="0:0:0.3" Value="0.0" KeySpline="0.1,0.9,0.2,1"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="SlidingContainer" Storyboard.TargetProperty="Opacity">
+                    <SplineDoubleKeyFrame KeyTime="0:0:0.3" Value="1.0" KeySpline="0.1,0.9,0.2,1"/>
+                </DoubleAnimationUsingKeyFrames>
+            </Storyboard>
+        </Grid.Resources>
+
+        <StackPanel x:Name="SlidingContainer">
+            <!-- Add RenderTransform to host the CompositeTransform -->
+            <StackPanel.RenderTransform>
+                <CompositeTransform x:Name="ControlTransform" TranslateY="0"/>
+            </StackPanel.RenderTransform>
+
+            <!--Slider-->
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="50"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock x:Name="ElapsedTime" FontSize="12" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="LightGray"/>
+
+                <Grid Grid.Column="1" Margin="8,0,8,0">
+                    <Slider x:Name="SeekBar" IsThumbToolTipEnabled="False" RequestedTheme="Dark" ValueChanged="SeekBar_ValueChanged">
+                        <Slider.Resources>
+                            <!-- Custom Active Track (Value Fill) Colors -->
+                            <SolidColorBrush x:Key="SliderTrackValueFill" Color="White"/>
+                            <SolidColorBrush x:Key="SliderTrackValueFillPointerOver" Color="White"/>
+                            <SolidColorBrush x:Key="SliderTrackValueFillPressed" Color="White"/>
+
+                            <!-- Custom Thumb Colors -->
+                            <SolidColorBrush x:Key="SliderThumbBackground" Color="White"/>
+                            <SolidColorBrush x:Key="SliderThumbBackgroundPointerOver" Color="White"/>
+                            <SolidColorBrush x:Key="SliderThumbBackgroundPressed" Color="White"/>
+                        </Slider.Resources>
+                    </Slider>
+                    <!--Progress Bar-->
+                    <muxc:ProgressBar x:Name="LoadingIndicator" Visibility="Collapsed" IsIndeterminate="True" ShowPaused="False" ShowError="False" Foreground="White" /> 
+                </Grid>
+                
+                <TextBlock x:Name="TotalTime" FontSize="12" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="LightGray"/>
+
+            </Grid>
+
+            <!-- Actual Controls-->
+            <Grid Margin="0,30,0,40">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <!--Queue and Lyrics toggle controls-->
+                <StackPanel Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" CornerRadius="20">
+                    <StackPanel.Background>
+                        <AcrylicBrush TintColor="LightGray" FallbackColor="DimGray" TintOpacity="0.15" TintLuminosityOpacity="0.3"/>
+                    </StackPanel.Background>
+                    <!--Toggle Queue Button-->
+                    <ToggleButton x:Name="ToggleQueue_Button" Checked="ToggleQueue_Button_Checked" Unchecked="ToggleQueue_Button_Unchecked" Height="32" Width="32" CornerRadius="16" Padding="0" Margin="4" Background="Transparent" BorderThickness="0" RequestedTheme="Dark">
+                        <FontIcon Glyph="&#xEA37;" FontSize="14" FontFamily="Segoe Fluent Icons, Segoe MDL2 Assets" />
+                    </ToggleButton>
+                    <!--Toggle Lyrics Button-->
+                    <ToggleButton x:Name="ToggleLyrics_Button" Checked="ToggleLyrics_Button_Checked" Unchecked="ToggleLyrics_Button_Unchecked" Height="32" Width="32" CornerRadius="16" Padding="0" Margin="4" Background="Transparent" BorderThickness="0" RequestedTheme="Dark">
+                        <FontIcon Glyph="&#xE90A;" FontSize="16" FontFamily="Segoe Fluent Icons, Segoe MDL2 Assets"/>
+                    </ToggleButton>
+
+                </StackPanel>
+
+                <!--Play/pause, next, previous, shuffle, repeat controls-->
+                <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+
+                    <!--Previous Button-->
+                    <Grid Height="36" Width="36" CornerRadius="20" Margin="0,0,12,0">
+                        <Grid.Background>
+                            <AcrylicBrush TintColor="LightGray" FallbackColor="DimGray" TintOpacity="0.15" TintLuminosityOpacity="0.3"/>
+                        </Grid.Background>
+                        <Button x:Name="Previous_Button" Height="36" Width="36" CornerRadius="20" Padding="0" Background="Transparent" BorderThickness="0" PointerPressed="Previous_Button_PointerPressed" PointerReleased="Previous_Button_PointerReleased" PointerCaptureLost="Previous_Button_PointerCaptureLost" Click="Previous_Button_Click" RequestedTheme="Dark">
+                            <FontIcon Glyph="&#xEB9E;" FontSize="22" FontFamily="Segoe Fluent Icons, Segoe MDL2 Assets" Foreground="White"/>
+                        </Button>
+                    </Grid>
+
+                    <!--Play/Pause Button-->
+                    <Grid Height="52" Width="52" CornerRadius="26">
+                        <Grid.Background>
+                            <AcrylicBrush TintColor="LightGray" FallbackColor="DimGray" TintOpacity="0.15" TintLuminosityOpacity="0.3"/>
+                        </Grid.Background>
+                        <Button x:Name="PlayPause_Button" Height="52" Width="52" CornerRadius="26" Padding="0" Click="PlayPause_Button_Click" Background="Transparent" RequestedTheme="Dark">
+                            <FontIcon x:Name="PlayPause_Icon" Glyph="&#xF5B0;" FontSize="20" FontFamily="Segoe Fluent Icons, Segoe MDL2 Assets" Foreground="White"/>
+                        </Button>
+                    </Grid>
+                    <!--Next Button-->
+                    <Grid Height="36" Width="36" Margin="12,0,0,0" CornerRadius="20">
+                        <Grid.Background>
+                            <AcrylicBrush TintColor="LightGray" FallbackColor="DimGray" TintOpacity="0.15" TintLuminosityOpacity="0.3"/>
+                        </Grid.Background>
+                        <Button x:Name="Next_Button" Height="36" Width="36" CornerRadius="20" Padding="0" Background="Transparent" BorderThickness="0" PointerPressed="Next_Button_PointerPressed" PointerReleased="Next_Button_PointerReleased" PointerCaptureLost="Next_Button_PointerCaptureLost" Click="Next_Button_Click" RequestedTheme="Dark">
+                            <FontIcon  Glyph="&#xEB9D;" FontSize="22" FontFamily="Segoe Fluent Icons, Segoe MDL2 Assets" Foreground="White"/>
+                        </Button>
+                    </Grid>
+
+
+
+                </StackPanel>
+
+
+                <!--Volume, and more controls-->
+                <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center" CornerRadius="20">
+                    <StackPanel.Background>
+                        <AcrylicBrush TintColor="LightGray" FallbackColor="DimGray" TintOpacity="0.15" TintLuminosityOpacity="0.3"/>
+                    </StackPanel.Background> 
+                    <!--Add to Playlist Button-->
+                    <Button x:Name="AddToPlaylist_Button" Click="AddToPlaylist_Button_Click" Height="32" Width="32" CornerRadius="16" Padding="0" Background="Transparent" BorderThickness="0" Margin="4" RequestedTheme="Dark">
+                        <FontIcon Glyph="&#xECC8;" FontSize="18" FontFamily="Segoe Fluent Icons, Segoe MDL2 Assets" Foreground="White"/>
+                    </Button>
+                    <!--Volume Button-->
+                    <Button Height="32" Width="32" CornerRadius="16" Padding="0" Background="Transparent" BorderThickness="0" Margin="4" RequestedTheme="Dark">
+                        <Button.Flyout>
+                            <Flyout>
+                                <StackPanel Orientation="Horizontal">
+                                    <FontIcon Glyph="&#xE993;" FontSize="17" FontFamily="Segoe Fluent Icons, Segoe MDL2 Assets" Margin="0,0,12,0"/>
+                                    <Slider x:Name="VolumeSlider" ValueChanged="Volume_Slider_ValueChanged" Minimum="0" Maximum="100" Width="100"/>
+                                    <FontIcon Glyph="&#xE995;" FontSize="17" FontFamily="Segoe Fluent Icons, Segoe MDL2 Assets" Margin="12,0,0,0" />
+                                </StackPanel>
+                            </Flyout>
+                        </Button.Flyout>
+                        <FontIcon Glyph="&#xE995;" FontSize="18" FontFamily="Segoe Fluent Icons, Segoe MDL2 Assets" Foreground="White"/>
+                    </Button>
+                    <!--Full Screen Button-->
+                    <Button x:Name="ToggleFullScreen_Button" Click="ToggleFullScreen_Button_Click"  Height="32" Width="32" CornerRadius="16" Padding="0" Background="Transparent" BorderThickness="0" Margin="4" RequestedTheme="Dark">
+                        <FontIcon x:Name="ToggleFullScreenButton_Icon" Glyph="&#xE740;" FontSize="14" FontFamily="Segoe Fluent Icons, Segoe MDL2 Assets" Foreground="White"/>
+                    </Button>
+                    <!--More Options Button--> 
+                    <Button Height="32" Width="32" CornerRadius="16" Padding="0" Background="Transparent" BorderThickness="0" Margin="4" RequestedTheme="Dark">
+                        <Button.Flyout>
+                            <MenuFlyout>
+                                <MenuFlyoutItem x:Name="SaveQueueMenuFlyoutItem" Click="SaveQueue_MenuFlyoutItem_Click">
+                                    <MenuFlyoutItem.Icon>
+                                        <FontIcon Glyph="&#xE74E;" FontFamily="Segoe Fluent Icons, Segoe MDL2 Assets"/>
+                                    </MenuFlyoutItem.Icon>
+                                </MenuFlyoutItem>
+                                <MenuFlyoutItem x:Name="InfoMenuFlyoutItem" Click="Info_MenuFlyoutItem_Click">
+                                    <MenuFlyoutItem.Icon>
+                                        <FontIcon Glyph="&#xE946;" FontFamily="Segoe Fluent Icons, Segoe MDL2 Assets"/>
+                                    </MenuFlyoutItem.Icon>
+                                </MenuFlyoutItem>
+                                <MenuFlyoutSubItem x:Name="PlaybackSpeedMenuFlyoutItem">
+                                    <MenuFlyoutSubItem.Icon>
+                                        <FontIcon Glyph="&#xEC4A;" FontFamily="Segoe Fluent Icons, Segoe MDL2 Assets"/>
+                                    </MenuFlyoutSubItem.Icon>
+                                    <MenuFlyoutItem Text="0.25x" Click="PlaybackSpeed0Point25xFlyoutItem_Click"/>
+                                    <MenuFlyoutItem Text="0.5x" Click="PlaybackSpeed0Point5xFlyoutItem_Click"/>
+                                    <MenuFlyoutItem Text="1.0x" Click="PlaybackSpeed1PointOxFlyoutItem_Click"/>
+                                    <MenuFlyoutItem Text="1.25x" Click="PlaybackSpeed1Point25xFlyoutItem_Click"/>
+                                    <MenuFlyoutItem Text="1.5x" Click="PlaybackSpeed1Point5xFlyoutItem_Click"/>
+                                    <MenuFlyoutItem Text="2.0x" Click="PlaybackSpeed2PointOxFlyoutItem_Click"/>
+                                </MenuFlyoutSubItem>
+                                <MenuFlyoutItem x:Name="StopMenuFlyoutItem" Click="Stop_MenuFlyoutItem_Click">
+                                    <MenuFlyoutItem.Icon>
+                                        <FontIcon Glyph="&#xE71A;" FontFamily="Segoe Fluent Icons, Segoe MDL2 Assets"/>
+                                    </MenuFlyoutItem.Icon>
+                                </MenuFlyoutItem>
+                            </MenuFlyout>
+                        </Button.Flyout>
+                        <FontIcon Glyph="&#xE712;" FontSize="18" FontFamily="Segoe Fluent Icons, Segoe MDL2 Assets" Foreground="White"/>
+                    </Button>
+                </StackPanel>
+            </Grid>
+
+        </StackPanel>
+
+    </Grid>
+</UserControl>

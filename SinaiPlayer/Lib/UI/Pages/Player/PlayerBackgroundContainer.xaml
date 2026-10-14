@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UserControl
+    x:Class="SinaiPlayer.Lib.UI.Pages.Player.PlayerBackgroundContainer"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SinaiPlayer.Lib.UI.Pages.Player"
+    xmlns:lvs="using:LibVLCSharp.Platforms.UWP"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="Black">
+        <Grid.Resources>
+            <!-- Fluent "decelerate/accelerate" ease curve, same family as PlayerControls, so the
+                 background dim and the transport bar feel like one coordinated motion system. -->
+            <Storyboard x:Name="FadeOutStoryboard" Completed="FadeOutStoryboard_Completed">
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="FadingContainer" Storyboard.TargetProperty="Opacity">
+                    <SplineDoubleKeyFrame KeyTime="0:0:0.6" Value="0.0" KeySpline="0.33,1,0.68,1"/>
+                </DoubleAnimationUsingKeyFrames>
+            </Storyboard>
+
+            <Storyboard x:Name="FadeInStoryboard">
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="FadingContainer" Storyboard.TargetProperty="Opacity">
+                    <SplineDoubleKeyFrame KeyTime="0:0:0.4" Value="0.4" KeySpline="0.33,1,0.68,1"/>
+                </DoubleAnimationUsingKeyFrames>
+            </Storyboard>
+        </Grid.Resources>
+
+        <lvs:VideoView x:Name="VideoPlayerView" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Black" Loaded="VideoPlayerView_Loaded" Unloaded="VideoPlayerView_Unloaded" />
+        <Rectangle x:Name="FadingContainer" Fill="Black" Opacity="0.5" />
+        <Rectangle x:Name="VideoPlayerOverlayRectangle" Opacity="0" IsHitTestVisible="False" />
+        <Rectangle x:Name="VideoPlayerExpandedAcrylicRectangle" IsHitTestVisible="False" Opacity="0">
+            <Rectangle.Fill>
+                <AcrylicBrush TintColor="Black" TintOpacity="0.1" FallbackColor="Black" />
+            </Rectangle.Fill>
+        </Rectangle>
+        <Image x:Name="BackgroundArtworkImage" Stretch="UniformToFill" Visibility="Collapsed" />
+        <Rectangle x:Name="BackgroundArtworkPalette" Visibility="Collapsed" />
+        <local:ArtistSlideshowContainer x:Name="SlideshowContainer" Visibility="Collapsed" />
+        <Rectangle x:Name="ExpandedOverlay" Fill="Black" Opacity="0" />
+        <Rectangle x:Name="Overlay" Fill="Black" Opacity="0.3" />
+    </Grid>
+
+</UserControl>

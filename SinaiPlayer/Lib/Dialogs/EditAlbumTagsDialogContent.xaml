@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UserControl
+    x:Class="SinaiPlayer.Lib.Dialogs.EditAlbumTagsDialogContent"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SinaiPlayer.Lib.Dialogs"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid>
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="WindowStates">
+
+                <!-- State when window is 300 pixels or wider -->
+                <VisualState x:Name="WideState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="800" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="ParentStackPanel.Orientation" Value="Horizontal" />
+                    </VisualState.Setters>
+                </VisualState>
+
+                <!-- State when window is less than 300 pixels -->
+                <VisualState x:Name="NarrowState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="ParentStackPanel.Orientation" Value="Vertical" />
+                    </VisualState.Setters>
+                </VisualState>
+
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+
+        <ScrollViewer HorizontalScrollMode="Disabled" VerticalScrollBarVisibility="Hidden" VerticalScrollMode="Enabled" HorizontalScrollBarVisibility="Disabled">
+
+            <!-- Parent container that changes orientation -->
+            <StackPanel x:Name="ParentStackPanel">
+
+                <!-- First StackPanel -->
+                <StackPanel Margin="0,12,0,12">
+                    <!--Artwork Container-->
+                    <Grid Height="150" Width="150" CornerRadius="8" Background="{ThemeResource ControlOnImageFillColorDefaultBrush}">
+                        <Button x:Name="ArtworkButton" Background="Transparent" CornerRadius="8" Height="150" Width="150" Click="ArtworkButton_Click">
+                            <Grid>
+                                <FontIcon x:Name="PlaceHolderFontIcon" Glyph="&#xEB9F;" FontFamily="Segoe Fluent Icons, Segoe MDL2 Assets" Foreground="{ThemeResource SystemControlBackgroundBaseMediumLowBrush}" FontSize="50"/>
+                                <Image  x:Name="ArtworkImage" Stretch="Fill" />
+                            </Grid>
+                        </Button>
+                    </Grid>
+                </StackPanel>
+
+                <!-- Second StackPanel -->
+                <StackPanel Margin="12,12,12,20" MinWidth="250">
+                    
+                    <TextBlock x:Name="AlbumTitleTextBlock" Style="{ThemeResource CaptionTextBlockStyle}" Margin="0,0,0,6"/>
+                    <TextBox x:Name="AlbumTitle" PlaceholderText="Album Title" />
+                    
+                    <TextBlock x:Name="AlbumArtistTextBlock" Style="{ThemeResource CaptionTextBlockStyle}" Margin="0,12,0,6"/>
+                    <TextBox x:Name="AlbumArtist" PlaceholderText="Artist" />
+                    
+                    <TextBlock x:Name="ReleaseYearTextBlock" Style="{ThemeResource CaptionTextBlockStyle}" Margin="0,12,0,6"/>
+                    <TextBox x:Name="AlbumReleaseYear" PlaceholderText="Release year" />
+                    
+                </StackPanel>
+
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+    
+</UserControl>

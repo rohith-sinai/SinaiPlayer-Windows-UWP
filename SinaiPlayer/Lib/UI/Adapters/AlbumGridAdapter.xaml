@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UserControl
+    x:Class="SinaiPlayer.Lib.UI.Adapters.AlbumGridAdapter"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SinaiPlayer.Lib.UI.Adapters"
+    xmlns:vm="using:SinaiPlayer.Lib.UI.ViewModels"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" 
+    PointerEntered="Grid_PointerEntered" 
+    PointerExited="Grid_PointerExited">
+
+    <Grid Background="Transparent">
+
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="HoverStates">
+                <VisualState x:Name="NormalState">
+                    <Storyboard>
+                        <DoubleAnimation Storyboard.TargetName="HoverContainer" Storyboard.TargetProperty="Opacity" To="0.0" Duration="0:0:0.1" />
+                    </Storyboard>
+                </VisualState>
+                <VisualState x:Name="HoverState">
+                    <Storyboard>
+                        <DoubleAnimation Storyboard.TargetName="HoverContainer" Storyboard.TargetProperty="Opacity" To="1.0" Duration="0:0:0.1" />
+                    </Storyboard>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+
+        <Grid.ContextFlyout>
+            <MenuFlyout>
+                <MenuFlyoutSubItem x:Name="PlayMenuFlyoutSubItem">
+                    <MenuFlyoutSubItem.Icon>
+                        <FontIcon Glyph="&#xE768;" FontFamily="Segoe Fluent Icons, Segoe MDL2 Assets"/>
+                    </MenuFlyoutSubItem.Icon>
+                    <MenuFlyoutItem x:Name="PlayNowMenuFlyoutItem" Click="PlayNow_FlyoutItem_Click"/>
+                    <MenuFlyoutItem x:Name="PlayNextMenuFlyoutItem" Click="PlayNext_FlyoutItem_Click"/>
+                    <MenuFlyoutItem x:Name="PlayLastMenuFlyoutItem" Click="PlayLast_FlyoutItem_Click"/>
+                </MenuFlyoutSubItem>
+
+                <MenuFlyoutItem x:Name="AddToPlaylistMenuFlyoutItem" Click="AddToPlaylist_FlyoutItem_Click">
+                    <MenuFlyoutItem.Icon>
+                        <FontIcon Glyph="&#xE710;" FontFamily="Segoe Fluent Icons, Segoe MDL2 Assets"/>
+                    </MenuFlyoutItem.Icon>
+                </MenuFlyoutItem>
+
+                <MenuFlyoutItem x:Name="ShowArtistMenuFlyoutItem" Click="ShowArtist_FlyoutItem_Click">
+                    <MenuFlyoutItem.Icon>
+                        <FontIcon Glyph="&#xE77B;" FontFamily="Segoe Fluent Icons, Segoe MDL2 Assets"/>
+                    </MenuFlyoutItem.Icon>
+                </MenuFlyoutItem>
+
+                <MenuFlyoutItem x:Name="EditMenuFlyoutItem" Click="Edit_FlyoutItem_Click">
+                    <MenuFlyoutItem.Icon>
+                        <FontIcon Glyph="&#xE70F;" FontFamily="Segoe Fluent Icons, Segoe MDL2 Assets"/>
+                    </MenuFlyoutItem.Icon>
+                </MenuFlyoutItem>
+
+                <MenuFlyoutItem x:Name="InfoMenuFlyoutItem" Click="Properties_FlyoutItem_Click">
+                    <MenuFlyoutItem.Icon>
+                        <FontIcon Glyph="&#xE946;" FontFamily="Segoe Fluent Icons, Segoe MDL2 Assets"/>
+                    </MenuFlyoutItem.Icon>
+                </MenuFlyoutItem>
+
+                <MenuFlyoutItem x:Name="DeleteMenuFlyoutItem" Click="Delete_FlyoutItem_Click">
+                    <MenuFlyoutItem.Icon>
+                        <FontIcon Glyph="&#xE74D;" FontFamily="Segoe Fluent Icons, Segoe MDL2 Assets"/>
+                    </MenuFlyoutItem.Icon>
+                </MenuFlyoutItem>
+
+            </MenuFlyout>
+        </Grid.ContextFlyout>
+
+        <StackPanel Padding="6">
+
+            <Grid Height="150" Width="150" CornerRadius="8">
+                <!--Imager Container Background-->
+                <Rectangle Fill="{ThemeResource LayerOnMicaBaseAltFillColorDefaultBrush}" />
+                <!--Placeholder Icon-->
+                <FontIcon Glyph="&#xEB9F;" FontSize="45" FontFamily="Segoe Fluent Icons, Segoe MDL2 Assets" Foreground="{ThemeResource ControlFillColorSecondaryBrush}"/>
+                <!--Actual Image-->
+                <Image x:Name="ArtworkImage" Source="{x:Bind ((vm:AlbumViewModel)DataContext).Image, Mode=OneWay}" Stretch="Fill" />
+                <!--Image Container Border-->
+                <Border Background="Transparent" Opacity="0.2" BorderBrush="{ThemeResource SystemControlBackgroundBaseMediumLowBrush}" BorderThickness="1" CornerRadius="8"/>
+                <!--Hover Container-->
+                <Grid x:Name="HoverContainer" Opacity="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+
+                    <Rectangle Fill="Black" Opacity="0.3" />
+
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Grid Margin="4" CornerRadius="20">
+                            <Grid.Background>
+                                <AcrylicBrush TintColor="{x:Bind ((vm:AlbumViewModel)DataContext).PaletteColor, Mode=OneWay}" TintOpacity="0.8" />
+                            </Grid.Background>
+                            <Button Click="Play_HoverButton_Click" Height="40" Width="40" Background="Transparent" Padding="0" CornerRadius="20">
+                                <FontIcon Glyph="&#xE768;" FontSize="16" FontFamily="Segoe Fluent Icons, Segoe MDL2 Assets" Foreground="White"/>
+                            </Button>
+                        </Grid>
+                        <Grid Margin="4" CornerRadius="20">
+                            <Grid.Background>
+                                <AcrylicBrush TintColor="{x:Bind ((vm:AlbumViewModel)DataContext).PaletteColor, Mode=OneWay}" TintOpacity="0.8" />
+                            </Grid.Background>
+                            <Button Click="AddToPlaylist_HoverButton_Click" Height="40" Width="40" CornerRadius="20" Background="Transparent" Padding="0">
+                                <FontIcon Glyph="&#xE710;" FontSize="16" FontFamily="Segoe Fluent Icons, Segoe MDL2 Assets" Foreground="White" />
+                            </Button>
+                        </Grid>
+                    </StackPanel>
+                </Grid>
+            </Grid>
+
+            <TextBlock Text="{x:Bind ((vm:AlbumViewModel)DataContext).Title, Mode=OneWay}" Style="{StaticResource BodyStrongTextBlockStyle}" Margin="4,8,0,0" MaxLines="1" Width="150"/>
+
+            <TextBlock x:Name="ArtistTextBlock" Text="{x:Bind ((vm:AlbumViewModel)DataContext).Artist, Mode=OneWay}" Style="{StaticResource CaptionTextBlockStyle}" Opacity="0.7" Margin="4,0,0,0" MaxLines="1" Width="150"/>
+            
+            <TextBlock Name="YearTextBlock" Text="{x:Bind ((vm:AlbumViewModel)DataContext).Year, Mode=OneWay}" Style="{StaticResource CaptionTextBlockStyle}" Opacity="0.7" Margin="4,0,0,0" MaxLines="1" Width="150"/>
+
+        </StackPanel>
+    </Grid>
+
+
+</UserControl>

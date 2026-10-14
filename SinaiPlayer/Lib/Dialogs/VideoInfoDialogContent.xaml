@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UserControl
+    x:Class="SinaiPlayer.Lib.Dialogs.VideoInfoDialogContent"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SinaiPlayer.Lib.Dialogs"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <GridView IsItemClickEnabled="False" SelectionMode="None">
+        <GridView.ItemContainerStyle>
+            <Style TargetType="GridViewItem" BasedOn="{StaticResource DefaultGridViewItemStyle}">
+                <Setter Property="Margin" Value="0, 12, 20, 0"/>
+                <Setter Property="HorizontalContentAlignment" Value="Left" />
+            </Style>
+        </GridView.ItemContainerStyle>
+
+        <GridView.Items>
+            <StackPanel MaxWidth="200">
+                <TextBlock x:Name="TitleTextBlock" Style="{ThemeResource CaptionTextBlockStyle}" Foreground="{ThemeResource TextFillColorSecondaryBrush}"/>
+                <TextBlock x:Name="Title" Style="{ThemeResource BodyTextBlockStyle}"/>
+            </StackPanel> 
+
+            <StackPanel MaxWidth="200">
+                <TextBlock x:Name="GenresTextBlock" Style="{ThemeResource CaptionTextBlockStyle}" Foreground="{ThemeResource TextFillColorSecondaryBrush}"/>
+                <TextBlock x:Name="Genre" Style="{ThemeResource BodyTextBlockStyle}"/>
+            </StackPanel>
+
+            <StackPanel MaxWidth="200">
+                <TextBlock x:Name="ReleaseYearTextBlock" Style="{ThemeResource CaptionTextBlockStyle}" Foreground="{ThemeResource TextFillColorSecondaryBrush}"/>
+                <TextBlock x:Name="Year" Style="{ThemeResource BodyTextBlockStyle}"/>
+            </StackPanel>
+
+            <StackPanel MaxWidth="200">
+                <TextBlock x:Name="FormatTextBlock" Style="{ThemeResource CaptionTextBlockStyle}" Foreground="{ThemeResource TextFillColorSecondaryBrush}"/>
+                <TextBlock  x:Name="Type" Style="{ThemeResource BodyTextBlockStyle}"/>
+            </StackPanel>
+
+            <StackPanel MaxWidth="200">
+                <TextBlock x:Name="BitrateTextBlock" Style="{ThemeResource CaptionTextBlockStyle}" Foreground="{ThemeResource TextFillColorSecondaryBrush}"/>
+                <TextBlock x:Name="Bitrate" Style="{ThemeResource BodyTextBlockStyle}"/>
+            </StackPanel>
+
+            <StackPanel MaxWidth="200">
+                <TextBlock x:Name="DurationTextBlock" Style="{ThemeResource CaptionTextBlockStyle}" Foreground="{ThemeResource TextFillColorSecondaryBrush}"/>
+                <TextBlock x:Name="Duration" Style="{ThemeResource BodyTextBlockStyle}"/>
+            </StackPanel>
+
+            <StackPanel MaxWidth="200">
+                <TextBlock x:Name="FileSizeTextBlock" Style="{ThemeResource CaptionTextBlockStyle}" Foreground="{ThemeResource TextFillColorSecondaryBrush}"/>
+                <TextBlock x:Name="Size" Style="{ThemeResource BodyTextBlockStyle}"/>
+            </StackPanel>
+        </GridView.Items>
+
+        <GridView.Footer>
+            <StackPanel Margin="0,12,0,0">
+                <TextBlock x:Name="FileLocationTextBlock" Style="{ThemeResource CaptionTextBlockStyle}" Foreground="{ThemeResource TextFillColorSecondaryBrush}"/>
+                <TextBlock x:Name="Location" Style="{ThemeResource BodyTextBlockStyle}"/>
+                <Button x:Name="ShowInFolderButton" Style="{StaticResource TextBlockButtonStyle}" Padding="0" Margin="0,6,0,0" Click="ShowInFolder"/>
+            </StackPanel>
+        </GridView.Footer>
+    </GridView>
+</UserControl>

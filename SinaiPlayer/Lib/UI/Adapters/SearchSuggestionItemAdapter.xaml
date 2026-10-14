@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UserControl
+    x:Class="SinaiPlayer.Lib.UI.Adapters.SearchSuggestionItemAdapter"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SinaiPlayer.Lib.UI.Adapters"
+    xmlns:vm="using:SinaiPlayer.Lib.UI.ViewModels"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid MinHeight="52">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="40" />
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="0" Height="40" Width="40">
+            <Grid Height="40" Width="40" Visibility="{x:Bind ((vm:SearchSuggestionViewModel)DataContext).ArtistArtworkVisibility, Mode=OneWay}">
+                <Ellipse Fill="{ThemeResource SolidBackgroundFillColorBaseBrush}" />
+                <FontIcon Glyph="&#xE77B;" FontSize="15" FontFamily="Segoe Fluent Icons, Segoe MDL2 Assets" Foreground="{ThemeResource ControlFillColorSecondaryBrush}"/>
+                <Ellipse>
+                    <Ellipse.Fill>
+                        <ImageBrush ImageSource="{x:Bind ((vm:SearchSuggestionViewModel)DataContext).Image, Mode=OneWay}" Stretch="Fill"/>
+                    </Ellipse.Fill>
+                </Ellipse>
+            </Grid>
+            <Grid CornerRadius="8" Background="{ThemeResource SolidBackgroundFillColorBaseBrush}" Height="{x:Bind ((vm:SearchSuggestionViewModel)DataContext).ArtworkHeight, Mode=OneWay}" Width="{x:Bind ((vm:SearchSuggestionViewModel)DataContext).ArtworkWidth, Mode=OneWay}" Visibility="{x:Bind ((vm:SearchSuggestionViewModel)DataContext).DefaultArtworkVisibility, Mode=OneWay}">
+                <FontIcon Glyph="&#xEB9F;" FontSize="14" FontFamily="Segoe Fluent Icons, Segoe MDL2 Assets" Foreground="{ThemeResource ControlFillColorSecondaryBrush}"/>
+                <Image Source="{x:Bind ((vm:SearchSuggestionViewModel)DataContext).Image, Mode=OneWay}" Stretch="Fill" />
+            </Grid>
+        </Grid>
+        
+        <StackPanel Grid.Column="1" VerticalAlignment="Center" Margin="12,0,0,0">
+            <TextBlock Text="{x:Bind ((vm:SearchSuggestionViewModel)DataContext).Title, Mode=OneWay}" Style="{ThemeResource BodyTextBlockStyle}"
+                Foreground="{ThemeResource TextFillColorPrimaryBrush}"
+                TextTrimming="CharacterEllipsis"/>
+            <TextBlock Text="{x:Bind ((vm:SearchSuggestionViewModel)DataContext).SubTitle, Mode=OneWay}" Style="{ThemeResource CaptionTextBlockStyle}"
+                Foreground="{ThemeResource TextFillColorSecondaryBrush}"
+                TextTrimming="CharacterEllipsis"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

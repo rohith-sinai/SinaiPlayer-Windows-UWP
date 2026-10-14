@@ -1,0 +1,67 @@
+﻿<Page
+    x:Class="SinaiPlayer.Lib.UI.Pages.IntroPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SinaiPlayer.Lib.UI.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="0">
+            <Image Source="/Assets/LargeTile.scale-400.png"  Stretch="Uniform"/>
+        </Grid>
+
+        <Grid Grid.Column="1" Padding="0,0,40,0">
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Left">
+                <TextBlock x:Name="Heading" Style="{StaticResource SubheaderTextBlockStyle}" FontWeight="SemiBold"  Margin="0,0,0,40"/>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <FontIcon FontFamily="Segoe Fluent Icons, Segoe MDL2 Assets" Glyph="&#xE8F1;" Foreground="{ThemeResource AccentTextFillColorTertiaryBrush}" FontSize="30" Grid.Column="0"/>
+                    <StackPanel Margin="20,0,20,0" Grid.Column="1">
+                        <TextBlock x:Name="FeatureOneTitle" Style="{StaticResource SubtitleTextBlockStyle}" TextWrapping="Wrap"/>
+                        <TextBlock x:Name="FeatureOneSubTitle" Style="{StaticResource BodyTextBlockStyle}" TextWrapping="Wrap" Foreground="{StaticResource SystemControlForegroundBaseMediumBrush}"/>
+                    </StackPanel>
+                </Grid>
+
+                <Grid Margin="0,30,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <FontIcon FontFamily="Segoe Fluent Icons, Segoe MDL2 Assets" Glyph="&#xE786;" Foreground="{ThemeResource AccentTextFillColorTertiaryBrush}" FontSize="30" Grid.Column="0"/>
+                    <StackPanel Margin="20,0,20,0" Grid.Column="1">
+                        <TextBlock x:Name="FeatureTwoTitle" Style="{StaticResource SubtitleTextBlockStyle}" TextWrapping="Wrap"/>
+                        <TextBlock x:Name="FeatureTwoSubTitle" Style="{StaticResource BodyTextBlockStyle}" TextWrapping="Wrap" Foreground="{StaticResource SystemControlForegroundBaseMediumBrush}"/>
+                    </StackPanel>
+                </Grid>
+
+                <Grid Margin="0,30,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <FontIcon FontFamily="Segoe Fluent Icons, Segoe MDL2 Assets" Glyph="&#xE659;" Foreground="{ThemeResource AccentTextFillColorTertiaryBrush}" FontSize="30" Grid.Column="0"/>
+                    <StackPanel Margin="20,0,20,0" Grid.Column="1">
+                        <TextBlock x:Name="FeatureThreeTitle" Style="{StaticResource SubtitleTextBlockStyle}" TextWrapping="Wrap"/>
+                        <TextBlock x:Name="FeatureThreeSubTitle" Style="{StaticResource BodyTextBlockStyle}" TextWrapping="Wrap" Foreground="{StaticResource SystemControlForegroundBaseMediumBrush}"/>
+                    </StackPanel>
+                </Grid>
+                <Button x:Name="ContinueButton" Style="{StaticResource AccentButtonStyle}" Margin="0,45,0,0" Click="ContinueButton_Click" />
+            </StackPanel>
+        </Grid>
+
+        <Grid x:Name="TitleBar" VerticalAlignment="Top" Background="Transparent" Height="48" />
+        
+    </Grid>
+</Page>
